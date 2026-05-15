@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CrossTech Systems | Premium Tech Store, Repairs & Digital Services | Randburg</title>
 <meta name="description" content="CrossTech Systems – Premium laptops, PCs, repairs, and digital services in Randburg/Ferndale. Expert website design, hosting, IT support & more. Call +27 83 683 2745.">
-<meta name="keywords" content="CrossTech Systems, laptop repair Randburg, PC repair Ferndale, gaming laptops South Africa, website design Johannesburg, web hosting SA, IT support Randburg, computer repair Johannesburg">
+<meta name="keywords" content="CrossTech Systems, laptop repair Randburg, PC repair Ferndale, gaming laptops South Africa, website design Johannesburg, web hosting SA, IT support Randburg, computer repair, CCTV installation">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://crosstechz.co.za/">
 <meta property="og:title" content="CrossTech Systems | Tech Store, Repairs & Digital Services | Randburg">
@@ -14,13 +14,17 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_ZA">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://crosstechz.co.za/#business","name":"CrossTech Systems","description":"Premium laptops, PCs, repairs, website design, hosting and IT services in Randburg and Ferndale, Johannesburg.","url":"https://crosstechz.co.za/","telephone":"+27836832745","email":"sales@crosstechz.co.za","address":{"@type":"PostalAddress","streetAddress":"12 Hill St","addressLocality":"Ferndale","addressRegion":"Randburg","postalCode":"2160","addressCountry":"ZA"},"geo":{"@type":"GeoCoordinates","latitude":-26.0925,"longitude":27.9889},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"09:00","closes":"14:00"}],"priceRange":"R","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"47"}}]}
+{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://crosstechz.co.za/#business","name":"CrossTech Systems","description":"Premium laptops, PCs, repairs, website design, hosting, IT support and CCTV installation in Randburg/Ferndale, Johannesburg.","url":"https://crosstechz.co.za/","telephone":"+27836832745","address":{"@type":"PostalAddress","streetAddress":"12 Hill Street","addressLocality":"Ferndale","postalCode":"2160","addressCountry":"ZA"},"priceRange":"ZAR","areaServed":"ZA","foundingDate":"2020","image":"https://crosstechz.co.za/images/logo.png"}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
 :root{
+  --primary-blue:#0A3D91;
+  --accent-blue:#1976D2;
+  --accent-green:#28A745;
+  --white:#FFFFFF;
   --bg:#080e18;
   --bg2:#0d1624;
   --bg3:#111d2e;
@@ -31,7 +35,6 @@
   --cyan-dim:rgba(0,229,255,0.12);
   --cyan-glow:rgba(0,229,255,0.3);
   --teal:#00bfa5;
-  --white:#f0f8ff;
   --gray:#8aaccc;
   --gray2:#4a6882;
   --red:#ff4655;
@@ -45,384 +48,197 @@
   --glow2:0 0 40px rgba(0,229,255,0.2);
   --shadow:0 8px 40px rgba(0,0,0,0.5);
 }
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:var(--font-body);background:var(--bg);color:var(--white);overflow-x:hidden;line-height:1.6}
-::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar{width:8px}
 ::-webkit-scrollbar-track{background:var(--bg2)}
-::-webkit-scrollbar-thumb{background:var(--cyan2);border-radius:4px}
+::-webkit-scrollbar-thumb{background:var(--accent-blue);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent-green)}
 a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
+img{max-width:100%;display:block;height:auto}
 
 /* ── NOISE OVERLAY ── */
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");opacity:.4;pointer-events:none;z-index:9999}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='frac[...]
+
+/* ── TECH CIRCUIT BACKGROUND ── */
+.circuit-bg{position:absolute;inset:0;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,50 L90,50 M50,10 L50,90' stroke='%2300e5ff' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%2328A745'/%3E%3C/svg%3E");background-size:100px 100px;pointer-events:none}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 4%;background:rgba(8,14,24,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,229,255,0.12);transition:box-shadow .3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 4%;background:rgba(8,14,24,0.95);backdrop-filter:blur(20px);border-bottom:2px solid rgba(41,189,240,0.2);transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,0.6)}
-.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.logo-icon{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--bg2),var(--card));border:2px solid var(--cyan2);display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(0,229,255,0.35);flex-shrink:0}
-.logo-icon svg{width:24px;height:24px;color:var(--cyan)}
-.logo-text{font-family:var(--font-head);font-weight:700;font-size:1.25rem;letter-spacing:.04em;color:var(--white);line-height:1}
-.logo-text em{color:var(--cyan);font-style:normal}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.nav-logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo-icon{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--primary-blue),var(--accent-blue));border:2px solid var(--accent-green);display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(40,167,69,0.3)}
+.logo-icon svg{width:28px;height:28px;color:var(--white)}
+.logo-text{font-family:var(--font-head);font-weight:700;font-size:1.3rem;letter-spacing:.05em;color:var(--white);line-height:1}
+.logo-text em{color:var(--accent-green);font-style:normal}
 .logo-sub{font-family:var(--font-mono);font-size:.55rem;color:var(--gray);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:2px}
-.nav-links{display:flex;align-items:center;gap:2px;flex:1;justify-content:center}
-.nav-links a{font-family:var(--font-head);font-size:.95rem;font-weight:500;color:var(--gray);padding:7px 12px;border-radius:6px;transition:all .2s;letter-spacing:.04em;position:relative}
-.nav-links a:hover,.nav-links a.active{color:var(--cyan)}
-.nav-links a.active::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:20px;height:2px;background:var(--cyan);border-radius:2px}
+.nav-links{display:flex;align-items:center;gap:3px;flex:1;justify-content:center}
+.nav-links a{font-family:var(--font-head);font-size:.95rem;font-weight:500;color:var(--gray);padding:8px 14px;border-radius:6px;transition:all .2s;letter-spacing:.04em;position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--accent-green);background:rgba(40,167,69,0.1)}
+.nav-links a.active::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:20px;height:2px;background:var(--accent-green);border-radius:2px}
 .dropdown{position:relative}
-.dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--card2);border:1px solid rgba(0,229,255,0.15);border-radius:var(--radius);padding:8px;min-width:200px;z-index:200;box-shadow:var(--shadow)}
+.dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--card2);border:1px solid rgba(40,167,69,0.25);border-radius:var(--radius);padding:8px 0;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
 .dropdown:hover .dropdown-menu{display:block}
-.dropdown-menu a{display:block;padding:8px 14px;border-radius:6px;font-size:.88rem;color:var(--gray);transition:all .2s}
-.dropdown-menu a:hover{color:var(--cyan);background:var(--cyan-dim)}
-.nav-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.nav-cart{position:relative;width:38px;height:38px;border-radius:8px;background:var(--card);border:1px solid rgba(0,229,255,0.15);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;color:var(--gray)}
-.nav-cart:hover{border-color:var(--cyan);color:var(--cyan)}
-.cart-count{position:absolute;top:-6px;right:-6px;width:18px;height:18px;background:var(--cyan);color:var(--bg);border-radius:50%;font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:var(--font-head)}
-.btn-wa-nav{display:flex;align-items:center;gap:6px;background:#25D366;color:#fff;font-family:var(--font-head);font-weight:600;font-size:.85rem;padding:8px 14px;border-radius:8px;letter-spacing:.04em;transition:all .2s;white-space:nowrap}
-.btn-wa-nav:hover{background:#1ebe59;box-shadow:0 4px 16px rgba(37,211,102,.4);transform:translateY(-1px)}
+.dropdown-menu a{display:block;padding:10px 14px;border-radius:6px;font-size:.88rem;color:var(--gray);transition:all .2s;margin:2px 6px}
+.dropdown-menu a:hover{color:var(--accent-green);background:rgba(40,167,69,0.12)}
+.nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-cart{position:relative;width:40px;height:40px;border-radius:8px;background:var(--card);border:1px solid rgba(40,167,69,0.2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;color:var(--gray)}
+.nav-cart:hover{border-color:var(--accent-green);color:var(--accent-green)}
+.cart-count{position:absolute;top:-8px;right:-8px;width:20px;height:20px;background:var(--red);color:var(--white);border-radius:50%;font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.btn-wa-nav{display:flex;align-items:center;gap:6px;background:var(--accent-green);color:#000;font-family:var(--font-head);font-weight:600;font-size:.85rem;padding:10px 16px;border-radius:8px;letter-spacing:.04em;transition:all .2s}
+.btn-wa-nav:hover{background:#20c236;box-shadow:0 4px 16px rgba(40,167,69,.4);transform:translateY(-1px)}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--cyan);border-radius:2px;transition:all .3s}
-.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--bg2);border-bottom:1px solid rgba(0,229,255,0.1);padding:20px 4%;z-index:999;box-shadow:0 10px 40px rgba(0,0,0,.5)}
-.mobile-menu a{display:block;font-family:var(--font-head);font-size:1.1rem;color:var(--gray);padding:12px 0;border-bottom:1px solid rgba(0,229,255,0.06);letter-spacing:.04em}
-.mobile-menu a:hover{color:var(--cyan)}
+.hamburger span{display:block;width:22px;height:2px;background:var(--accent-green);border-radius:2px;transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:var(--bg2);border-bottom:1px solid rgba(40,167,69,0.1);padding:20px 4%;z-index:999;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.mobile-menu a{display:block;font-family:var(--font-head);font-size:1.1rem;color:var(--gray);padding:12px 0;border-bottom:1px solid rgba(40,167,69,0.06);letter-spacing:.04em}
+.mobile-menu a:hover{color:var(--accent-green)}
 .mobile-menu .mob-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
 
 /* ── HERO ── */
-#hero{min-height:100vh;display:flex;align-items:center;padding:68px 4% 0;position:relative;overflow:hidden;background:var(--bg)}
-.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.04) 1px,transparent 1px);background-size:50px 50px;pointer-events:none}
-.hero-orb{position:absolute;border-radius:50%;pointer-events:none}
-.hero-orb-1{width:600px;height:600px;top:-200px;right:-100px;background:radial-gradient(circle,rgba(0,229,255,.08) 0%,transparent 70%)}
-.hero-orb-2{width:400px;height:400px;bottom:-100px;left:-50px;background:radial-gradient(circle,rgba(0,191,165,.06) 0%,transparent 70%)}
-.hero-scan{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);animation:scan 4s linear infinite;opacity:.4}
-@keyframes scan{0%{top:-2px}100%{top:100%}}
+#hero{min-height:100vh;display:flex;align-items:center;padding:70px 4% 0;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--bg) 0%,var(--bg3) 100%)}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(40,167,69,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(40,167,69,.06) 1px,transparent 1px);background-size:50px 50px;opacity:0.5;pointer-events:none}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(40px)}
+.hero-orb-1{width:500px;height:500px;top:-150px;right:-50px;background:radial-gradient(circle,rgba(40,167,69,.08) 0%,transparent 70%)}
+.hero-orb-2{width:400px;height:400px;bottom:50px;left:-100px;background:radial-gradient(circle,rgba(25,118,210,.06) 0%,transparent 70%)}
+.hero-scan{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent-green),transparent);animation:scan 4s linear infinite;opacity:.5}
+@keyframes scan{0%{top:-3px}100%{top:100%}}
 .hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:2;width:100%;padding:80px 0}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.25);color:var(--cyan);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:50px;margin-bottom:20px}
-.hero-badge-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 1.8s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-h1{font-family:var(--font-head);font-size:clamp(2.4rem,5vw,4rem);font-weight:700;line-height:1.05;letter-spacing:.02em;margin-bottom:20px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(40,167,69,.12);border:1px solid rgba(40,167,69,.35);color:var(--accent-green);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:6px;margin-bottom:20px;width:fit-content}
+.hero-badge-dot{width:8px;height:8px;background:var(--accent-green);border-radius:50%;animation:blink 1.8s infinite;box-shadow:0 0 10px rgba(40,167,69,0.8)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:var(--font-head);font-size:clamp(2.4rem,5vw,4.2rem);font-weight:700;line-height:1.05;letter-spacing:.02em;margin-bottom:20px}
 h1 .line1{color:var(--white)}
-h1 .line2{color:var(--cyan);text-shadow:0 0 40px rgba(0,229,255,.5)}
-.hero-desc{font-size:1rem;color:var(--gray);margin-bottom:32px;max-width:480px;line-height:1.75}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--cyan);color:var(--bg);font-family:var(--font-head);font-weight:700;font-size:1rem;padding:13px 28px;border-radius:8px;letter-spacing:.05em;transition:all .25s;border:none;cursor:pointer}
-.btn-primary:hover{background:var(--cyan2);box-shadow:var(--glow);transform:translateY(-2px)}
-.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-family:var(--font-head);font-weight:600;font-size:1rem;padding:12px 24px;border-radius:8px;border:1px solid rgba(255,255,255,.2);letter-spacing:.04em;transition:all .25s;cursor:pointer}
-.btn-outline:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-dim)}
-.hero-stats{display:flex;gap:28px;flex-wrap:wrap}
+h1 .line2{color:var(--accent-green);text-shadow:0 0 40px rgba(40,167,69,.6)}
+.hero-desc{font-size:1.05rem;color:var(--gray);margin-bottom:32px;max-width:520px;line-height:1.8}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--primary-blue),var(--accent-blue));color:var(--white);font-family:var(--font-head);font-weight:700;font-size:1rem;padding:14px 32px;border-radius:8px;border:none;cursor:pointer;transition:all .3s;letter-spacing:.04em;box-shadow:0 4px 20px rgba(25,118,210,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(25,118,210,0.5);background:linear-gradient(135deg,var(--accent-blue),#1565c0)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-family:var(--font-head);font-weight:600;font-size:1rem;padding:12px 24px;border-radius:8px;border:2px solid var(--accent-green);transition:all .2s;letter-spacing:.04em}
+.btn-outline:hover{border-color:var(--accent-green);color:var(--accent-green);background:rgba(40,167,69,0.1)}
+.hero-stats{display:flex;gap:40px;flex-wrap:wrap}
 .hero-stat{text-align:left}
-.hero-stat-num{font-family:var(--font-head);font-size:1.8rem;font-weight:700;color:var(--cyan);letter-spacing:.04em}
-.hero-stat-label{font-size:.78rem;color:var(--gray);letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-mono)}
+.hero-stat-num{font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--accent-green);letter-spacing:.04em}
+.hero-stat-label{font-size:.78rem;color:var(--gray);letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-mono);margin-top:4px}
 .hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
-.hero-screen{background:var(--card);border:1px solid rgba(0,229,255,.2);border-radius:16px;overflow:hidden;box-shadow:0 0 60px rgba(0,229,255,.12),var(--shadow);position:relative}
-.hero-screen-header{background:var(--card2);padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(0,229,255,.1)}
+.hero-screen{background:var(--card);border:2px solid rgba(40,167,69,0.3);border-radius:16px;overflow:hidden;box-shadow:0 0 60px rgba(40,167,69,.15),var(--shadow);position:relative}
+.hero-screen-header{background:var(--card2);padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(40,167,69,.15)}
 .screen-dot{width:10px;height:10px;border-radius:50%}
 .screen-dot:nth-child(1){background:var(--red)}
 .screen-dot:nth-child(2){background:var(--yellow)}
-.screen-dot:nth-child(3){background:var(--green)}
-.screen-url{margin-left:auto;font-family:var(--font-mono);font-size:.65rem;color:var(--gray2);background:var(--bg2);padding:3px 10px;border-radius:4px;letter-spacing:.04em}
+.screen-dot:nth-child(3){background:var(--accent-green)}
+.screen-url{margin-left:auto;font-family:var(--font-mono);font-size:.65rem;color:var(--gray2);background:var(--bg2);padding:4px 12px;border-radius:4px;letter-spacing:.04em}
 .mockup-store{padding:20px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.mockup-product{background:var(--bg2);border:1px solid rgba(0,229,255,.1);border-radius:8px;padding:12px;transition:all .3s;cursor:pointer}
-.mockup-product:hover{border-color:var(--cyan);transform:translateY(-2px)}
+.mockup-product{background:var(--bg2);border:1px solid rgba(40,167,69,.12);border-radius:8px;padding:12px;transition:all .3s;cursor:pointer}
+.mockup-product:hover{border-color:var(--accent-green);transform:translateY(-2px)}
 .mockup-img{height:70px;background:linear-gradient(135deg,var(--bg3),var(--card2));border-radius:6px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:1.8rem}
 .mockup-name{font-family:var(--font-head);font-size:.8rem;font-weight:600;color:var(--white);margin-bottom:2px;letter-spacing:.03em}
-.mockup-price{font-family:var(--font-mono);font-size:.75rem;color:var(--cyan)}
-.hero-floating{position:absolute;background:var(--card2);border:1px solid rgba(0,229,255,.2);border-radius:10px;padding:10px 14px;box-shadow:var(--shadow)}
+.mockup-price{font-family:var(--font-mono);font-size:.75rem;color:var(--accent-green)}
+.hero-floating{position:absolute;background:var(--card2);border:1px solid rgba(40,167,69,.2);border-radius:10px;padding:12px 16px;box-shadow:var(--shadow)}
 .hero-floating.top-left{top:-20px;left:-30px;animation:float 3s ease-in-out infinite}
 .hero-floating.bot-right{bottom:-20px;right:-20px;animation:float 3s ease-in-out infinite .8s}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .float-label{font-family:var(--font-mono);font-size:.65rem;color:var(--gray);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
-.float-val{font-family:var(--font-head);font-size:.9rem;font-weight:700;color:var(--cyan);letter-spacing:.04em}
+.float-val{font-family:var(--font-head);font-size:.9rem;font-weight:700;color:var(--accent-green);letter-spacing:.04em}
 .float-stars{color:var(--yellow);font-size:.75rem}
 
+/* ── STAFF SPOTLIGHT SECTION ── */
+.staff-spotlight{background:linear-gradient(135deg,rgba(40,167,69,0.08),rgba(25,118,210,0.08));border:1px solid rgba(40,167,69,0.2);border-radius:14px;padding:40px;margin:60px 0;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.staff-photo{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 0 40px rgba(40,167,69,0.2)}
+.staff-photo img{width:100%;height:auto;display:block;min-height:350px;object-fit:cover}
+.staff-info h3{font-family:var(--font-head);font-size:1.8rem;font-weight:700;color:var(--accent-green);margin-bottom:6px;letter-spacing:.03em}
+.staff-role{font-family:var(--font-mono);font-size:.85rem;color:var(--accent-blue);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+.staff-bio{font-size:1rem;color:var(--gray);line-height:1.8;margin-bottom:20px}
+.staff-badges{display:flex;gap:10px;flex-wrap:wrap}
+.badge{display:inline-block;background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.3);color:var(--accent-green);font-family:var(--font-mono);font-size:.72rem;padding:6px 12px;border-radius:6px;letter-spacing:.04em}
+
 /* ── TRUST BAR ── */
-.trust-bar{background:var(--bg2);border-top:1px solid rgba(0,229,255,.1);border-bottom:1px solid rgba(0,229,255,.1);padding:16px 4%;overflow:hidden;position:relative}
+.trust-bar{background:var(--bg2);border-top:1px solid rgba(40,167,69,.15);border-bottom:1px solid rgba(40,167,69,.15);padding:20px 4%;overflow:hidden;position:relative}
 .trust-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .trust-item{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:.9rem;font-weight:500;color:var(--gray);letter-spacing:.04em;white-space:nowrap}
-.trust-item svg{width:18px;height:18px;color:var(--cyan)}
+.trust-item svg{width:20px;height:20px;color:var(--accent-green)}
+
+/* ── GALLERY SECTION ── */
+.gallery-section{padding:80px 4%;background:var(--bg)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.gallery-item{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(40,167,69,0.2);transition:all .3s;cursor:pointer;aspect-ratio:1}
+.gallery-item:hover{border-color:var(--accent-green);transform:scale(1.02);box-shadow:0 0 30px rgba(40,167,69,0.2)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ── SECTIONS ── */
 section{padding:80px 4%}
 .section-inner{max-width:1280px;margin:0 auto}
-.section-label{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+.section-label{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-green);margin-bottom:10px;font-weight:600}
 .section-title{font-family:var(--font-head);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.1;letter-spacing:.03em;margin-bottom:14px;color:var(--white)}
 .section-sub{color:var(--gray);max-width:560px;font-size:.95rem;line-height:1.75;margin-bottom:48px}
 .section-header-flex{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:48px}
 .section-header-flex .section-sub{margin-bottom:0}
-.link-all{font-family:var(--font-head);font-size:.9rem;color:var(--cyan);border:1px solid rgba(0,229,255,.25);padding:8px 18px;border-radius:6px;transition:all .2s;white-space:nowrap;letter-spacing:.04em}
-.link-all:hover{background:var(--cyan-dim);border-color:var(--cyan)}
-
-/* ── SHOP ── */
-#shop{background:var(--bg)}
-.shop-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
-.shop-tab{font-family:var(--font-head);font-size:.88rem;font-weight:500;padding:7px 16px;border-radius:6px;border:1px solid rgba(0,229,255,.15);color:var(--gray);cursor:pointer;transition:all .2s;letter-spacing:.04em;background:transparent}
-.shop-tab.active,.shop-tab:hover{background:var(--cyan);color:var(--bg);border-color:var(--cyan)}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
-.product-card{background:var(--card);border:1px solid rgba(0,229,255,.1);border-radius:12px;overflow:hidden;transition:all .3s;position:relative;cursor:pointer}
-.product-card:hover{border-color:rgba(0,229,255,.4);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4),0 0 0 1px rgba(0,229,255,.15)}
-.product-badge{position:absolute;top:12px;left:12px;font-family:var(--font-head);font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:4px;letter-spacing:.06em;text-transform:uppercase;z-index:2}
-.badge-new{background:var(--cyan);color:var(--bg)}
-.badge-hot{background:var(--red);color:#fff}
-.badge-sale{background:var(--yellow);color:var(--bg)}
-.badge-deal{background:var(--teal);color:#fff}
-.product-img-wrap{height:170px;background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;overflow:hidden}
-.product-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--card) 0%,transparent 50%)}
-.product-body{padding:16px}
-.product-name{font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--white);margin-bottom:4px;letter-spacing:.03em}
-.product-spec{font-size:.8rem;color:var(--gray);margin-bottom:10px;line-height:1.5}
-.product-price-row{display:flex;align-items:center;gap:8px;margin-bottom:12px}
-.product-price{font-family:var(--font-mono);font-size:1.05rem;color:var(--cyan);font-weight:700}
-.product-old{font-family:var(--font-mono);font-size:.82rem;color:var(--gray2);text-decoration:line-through}
-.product-actions{display:flex;gap:8px}
-.btn-cart{flex:1;background:var(--cyan);color:var(--bg);font-family:var(--font-head);font-weight:700;font-size:.85rem;padding:9px;border-radius:7px;border:none;cursor:pointer;letter-spacing:.05em;transition:all .2s}
-.btn-cart:hover{background:var(--cyan2);box-shadow:0 4px 16px rgba(0,229,255,.3)}
-.btn-wa-sm{width:36px;height:36px;background:#25D366;border-radius:7px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
-.btn-wa-sm:hover{background:#1ebe59;transform:translateY(-1px)}
-.btn-wa-sm svg{width:18px;height:18px;color:#fff}
-
-/* ── SERVICES ── */
-#services{background:var(--bg2)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.service-card{background:var(--card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:28px;transition:all .3s;position:relative;overflow:hidden;cursor:pointer}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--teal));opacity:0;transition:.3s}
-.service-card:hover{border-color:rgba(0,229,255,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
-.service-card:hover::before{opacity:1}
-.service-icon{width:52px;height:52px;border-radius:10px;background:var(--cyan-dim);border:1px solid rgba(0,229,255,.2);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.service-icon svg{width:26px;height:26px;color:var(--cyan)}
-.service-name{font-family:var(--font-head);font-size:1.15rem;font-weight:600;color:var(--white);margin-bottom:8px;letter-spacing:.03em}
-.service-desc{font-size:.88rem;color:var(--gray);line-height:1.7;margin-bottom:16px}
-.service-tag{display:inline-block;font-family:var(--font-mono);font-size:.68rem;color:var(--cyan2);background:rgba(0,184,217,.1);border:1px solid rgba(0,184,217,.2);padding:3px 9px;border-radius:4px;margin:2px;letter-spacing:.05em}
-.service-cta{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-family:var(--font-head);font-size:.88rem;color:var(--cyan);font-weight:600;letter-spacing:.04em;transition:gap .2s}
-.service-card:hover .service-cta{gap:10px}
-.service-price-tag{position:absolute;top:16px;right:16px;font-family:var(--font-mono);font-size:.72rem;color:var(--teal);background:rgba(0,191,165,.1);border:1px solid rgba(0,191,165,.2);padding:3px 8px;border-radius:4px}
-
-/* ── DIGITAL SERVICES HERO CARD ── */
-.digital-hero{grid-column:1/-1;background:linear-gradient(135deg,var(--card) 0%,rgba(0,191,165,.08) 100%);border:1px solid rgba(0,191,165,.25);border-radius:14px;padding:36px;display:flex;align-items:center;gap:40px;flex-wrap:wrap}
-.digital-hero-text{flex:1;min-width:250px}
-.digital-hero-text h3{font-family:var(--font-head);font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:8px;letter-spacing:.03em}
-.digital-hero-text p{color:var(--gray);font-size:.92rem;line-height:1.7}
-.digital-hero-perks{display:flex;gap:12px;flex-wrap:wrap;flex:1;min-width:250px}
-.digital-perk{flex:1;min-width:110px;background:var(--bg2);border:1px solid rgba(0,229,255,.1);border-radius:10px;padding:16px;text-align:center}
-.digital-perk-icon{font-size:1.6rem;margin-bottom:8px}
-.digital-perk-label{font-family:var(--font-head);font-size:.82rem;font-weight:600;color:var(--white);letter-spacing:.04em;margin-bottom:2px}
-.digital-perk-sub{font-size:.72rem;color:var(--gray);font-family:var(--font-mono)}
-
-/* ── FEATURED DEALS ── */
-#deals{background:var(--bg)}
-.deals-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:20px}
-.deal-hero-card{background:linear-gradient(135deg,#0d2237,#081827);border:1px solid rgba(0,229,255,.2);border-radius:14px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
-.deal-hero-card::before{content:'FEATURED DEAL';position:absolute;top:16px;right:-30px;transform:rotate(35deg);background:var(--yellow);color:var(--bg);font-family:var(--font-head);font-size:.68rem;font-weight:700;letter-spacing:.1em;padding:4px 40px}
-.deal-hero-emoji{font-size:4rem;margin-bottom:16px}
-.deal-hero-name{font-family:var(--font-head);font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:6px;letter-spacing:.03em}
-.deal-hero-specs{font-size:.82rem;color:var(--gray);line-height:1.8;margin-bottom:20px}
-.deal-hero-price{font-family:var(--font-mono);font-size:1.7rem;color:var(--cyan);margin-bottom:4px}
-.deal-hero-old{font-family:var(--font-mono);font-size:.9rem;color:var(--gray2);text-decoration:line-through;margin-bottom:20px}
-.deal-side-card{background:var(--card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px}
-.deal-side-card .deal-item{display:flex;gap:14px;align-items:center;background:var(--bg2);border-radius:8px;padding:12px;border:1px solid rgba(0,229,255,.08);transition:.2s;cursor:pointer}
-.deal-side-card .deal-item:hover{border-color:rgba(0,229,255,.3)}
-.deal-item-emoji{font-size:2rem;flex-shrink:0}
-.deal-item-name{font-family:var(--font-head);font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:2px;letter-spacing:.03em}
-.deal-item-spec{font-size:.75rem;color:var(--gray)}
-.deal-item-price{font-family:var(--font-mono);font-size:.88rem;color:var(--cyan);margin-top:4px}
-.deal-savings{display:inline-block;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.25);color:var(--green);font-family:var(--font-mono);font-size:.72rem;padding:3px 10px;border-radius:4px;margin-top:4px}
-
-/* ── CART PANEL ── */
-.cart-panel{position:fixed;right:-380px;top:0;width:380px;height:100vh;background:var(--bg2);border-left:1px solid rgba(0,229,255,.15);z-index:2000;transition:right .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.5)}
-.cart-panel.open{right:0}
-.cart-header{padding:20px;border-bottom:1px solid rgba(0,229,255,.1);display:flex;align-items:center;justify-content:space-between}
-.cart-title{font-family:var(--font-head);font-size:1.2rem;font-weight:700;letter-spacing:.04em;color:var(--white)}
-.cart-close{width:32px;height:32px;background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--gray);transition:all .2s;font-size:1.2rem}
-.cart-close:hover{color:var(--red);border-color:var(--red)}
-.cart-items{flex:1;overflow-y:auto;padding:16px}
-.cart-item{display:flex;gap:12px;padding:12px;background:var(--card);border:1px solid rgba(0,229,255,.08);border-radius:8px;margin-bottom:10px;position:relative}
-.cart-item-emoji{font-size:2rem;flex-shrink:0}
-.cart-item-details{flex:1}
-.cart-item-name{font-family:var(--font-head);font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:2px;letter-spacing:.03em}
-.cart-item-price{font-family:var(--font-mono);font-size:.85rem;color:var(--cyan)}
-.cart-item-remove{position:absolute;top:8px;right:8px;background:none;border:none;color:var(--gray2);cursor:pointer;font-size:.9rem;transition:.2s;line-height:1}
-.cart-item-remove:hover{color:var(--red)}
-.cart-footer{padding:20px;border-top:1px solid rgba(0,229,255,.1)}
-.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.cart-total-label{font-family:var(--font-head);font-size:1rem;color:var(--gray);letter-spacing:.04em}
-.cart-total-val{font-family:var(--font-mono);font-size:1.3rem;color:var(--cyan);font-weight:700}
-.btn-checkout{width:100%;background:var(--cyan);color:var(--bg);font-family:var(--font-head);font-weight:700;font-size:1rem;padding:14px;border-radius:8px;border:none;cursor:pointer;letter-spacing:.06em;transition:all .2s;margin-bottom:8px}
-.btn-checkout:hover{background:var(--cyan2);box-shadow:var(--glow)}
-.btn-wa-cart{width:100%;background:#25D366;color:#fff;font-family:var(--font-head);font-weight:600;font-size:.9rem;padding:12px;border-radius:8px;border:none;cursor:pointer;letter-spacing:.05em;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s}
-.btn-wa-cart:hover{background:#1ebe59}
-.cart-empty{text-align:center;padding:40px 20px;color:var(--gray)}
-.cart-empty-icon{font-size:3rem;margin-bottom:12px}
-.cart-empty p{font-family:var(--font-head);font-size:1rem;letter-spacing:.04em}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1999;opacity:0;pointer-events:none;transition:opacity .3s}
-.overlay.visible{opacity:1;pointer-events:all}
-
-/* ── REPAIRS ── */
-#repairs{background:var(--bg2)}
-.repairs-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.repair-list{display:flex;flex-direction:column;gap:12px}
-.repair-item{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid rgba(0,229,255,.1);border-radius:10px;padding:16px;transition:all .25s;cursor:pointer}
-.repair-item:hover{border-color:rgba(0,229,255,.35);transform:translateX(4px)}
-.repair-icon{width:44px;height:44px;border-radius:8px;background:var(--cyan-dim);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-.repair-name{font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--white);letter-spacing:.03em}
-.repair-price{font-family:var(--font-mono);font-size:.8rem;color:var(--teal)}
-.repair-time{font-size:.75rem;color:var(--gray);font-family:var(--font-mono)}
-.repair-visual{background:var(--card);border:1px solid rgba(0,229,255,.15);border-radius:14px;padding:32px;text-align:center;position:relative;overflow:hidden}
-.repair-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--teal),var(--cyan));background-size:200% 100%;animation:shimmer 2s linear infinite}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:0 0}}
-.repair-big-emoji{font-size:5rem;margin-bottom:20px;display:block;filter:drop-shadow(0 0 20px rgba(0,229,255,.3))}
-.repair-guarantee{display:flex;flex-direction:column;gap:10px;margin-top:20px}
-.guarantee-item{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--gray)}
-.guarantee-item svg{width:18px;height:18px;color:var(--green);flex-shrink:0}
+.link-all{font-family:var(--font-head);font-size:.9rem;color:var(--accent-green);border:1px solid rgba(40,167,69,.35);padding:10px 20px;border-radius:6px;transition:all .2s;white-space:nowrap;letter-spacing:.04em;background:rgba(40,167,69,0.08)}
+.link-all:hover{background:rgba(40,167,69,0.15);border-color:var(--accent-green)}
 
 /* ── TESTIMONIALS ── */
 #reviews{background:var(--bg)}
 .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.review-card{background:var(--card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:24px;transition:.3s}
-.review-card:hover{border-color:rgba(0,229,255,.3);transform:translateY(-3px)}
+.review-card{background:var(--card);border:1px solid rgba(40,167,69,.12);border-radius:12px;padding:24px;transition:.3s;position:relative}
+.review-card:hover{border-color:var(--accent-green);transform:translateY(-3px);box-shadow:0 0 30px rgba(40,167,69,0.15)}
 .review-stars{color:var(--yellow);font-size:.95rem;margin-bottom:12px;letter-spacing:2px}
 .review-text{font-size:.9rem;color:var(--gray);line-height:1.75;margin-bottom:16px;font-style:italic}
 .review-author{display:flex;align-items:center;gap:10px}
-.review-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--teal));display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:.95rem;font-weight:700;color:var(--bg)}
+.review-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent-blue),var(--accent-green));display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;color:var(--white);font-size:.85rem}
 .review-name{font-family:var(--font-head);font-size:.92rem;font-weight:600;color:var(--white);letter-spacing:.03em}
 .review-meta{font-size:.75rem;color:var(--gray2);font-family:var(--font-mono)}
 
-/* ── CONTACT ── */
-#contact{background:var(--bg2)}
-.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
-.contact-info{display:flex;flex-direction:column;gap:20px}
-.contact-item{display:flex;gap:14px;align-items:flex-start}
-.contact-item-icon{width:44px;height:44px;background:var(--cyan-dim);border:1px solid rgba(0,229,255,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.contact-item-icon svg{width:22px;height:22px;color:var(--cyan)}
-.contact-item-label{font-family:var(--font-mono);font-size:.7rem;color:var(--gray2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
-.contact-item-val{font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--white);letter-spacing:.03em}
-.contact-item-sub{font-size:.82rem;color:var(--gray)}
-.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
-.hours-row{display:flex;justify-content:space-between;font-size:.82rem;color:var(--gray);padding:5px 0;border-bottom:1px solid rgba(0,229,255,.06)}
-.hours-row span:last-child{color:var(--cyan);font-family:var(--font-mono)}
-.contact-form{background:var(--card);border:1px solid rgba(0,229,255,.1);border-radius:14px;padding:32px}
-.form-title{font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--white);letter-spacing:.04em;margin-bottom:24px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
-.form-label{font-family:var(--font-head);font-size:.82rem;color:var(--gray);letter-spacing:.06em;text-transform:uppercase}
-.form-input{background:var(--bg2);border:1px solid rgba(0,229,255,.15);border-radius:8px;padding:12px 14px;color:var(--white);font-family:var(--font-body);font-size:.92rem;transition:all .2s;outline:none;width:100%}
-.form-input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,229,255,.1)}
-.form-input::placeholder{color:var(--gray2)}
-select.form-input{cursor:pointer}
-.form-success{display:none;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.3);border-radius:8px;padding:14px;color:var(--green);font-family:var(--font-head);font-size:.9rem;letter-spacing:.04em;margin-bottom:14px;text-align:center}
+/* ── CERTIFICATES SECTION ── */
+.certificates-section{padding:60px 4%;background:var(--bg2)}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+.cert-item{background:var(--card);border:1px solid rgba(40,167,69,0.15);border-radius:10px;padding:20px;text-align:center;transition:all .3s}
+.cert-item:hover{border-color:var(--accent-green);transform:translateY(-4px)}
+.cert-item img{max-width:100%;height:150px;object-fit:contain;margin-bottom:12px}
+.cert-item p{font-family:var(--font-head);font-size:.9rem;color:var(--gray);letter-spacing:.02em}
 
 /* ── FOOTER ── */
-footer{background:var(--bg);border-top:1px solid rgba(0,229,255,.1);padding:60px 4% 30px}
+footer{background:var(--bg);border-top:1px solid rgba(40,167,69,.15);padding:60px 4% 30px}
 .footer-inner{max-width:1280px;margin:0 auto}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
 .footer-brand p{font-size:.88rem;color:var(--gray);line-height:1.75;margin:14px 0 20px}
 .footer-social{display:flex;gap:8px}
-.social-btn{width:36px;height:36px;border-radius:8px;background:var(--card);border:1px solid rgba(0,229,255,.12);display:flex;align-items:center;justify-content:center;color:var(--gray);transition:all .2s;cursor:pointer;font-size:.9rem}
-.social-btn:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.social-btn{width:40px;height:40px;border-radius:8px;background:var(--card);border:1px solid rgba(40,167,69,.12);display:flex;align-items:center;justify-content:center;color:var(--gray);transition:all .2s;font-weight:600;font-size:.85rem}
+.social-btn:hover{border-color:var(--accent-green);color:var(--accent-green);background:rgba(40,167,69,0.1);transform:translateY(-2px)}
 .footer-col-title{font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
-.footer-col a{display:block;font-size:.88rem;color:var(--gray);padding:4px 0;transition:.2s;letter-spacing:.02em}
-.footer-col a:hover{color:var(--cyan)}
-.footer-bottom{border-top:1px solid rgba(0,229,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-col a{display:block;font-size:.88rem;color:var(--gray);padding:6px 0;transition:.2s;letter-spacing:.02em}
+.footer-col a:hover{color:var(--accent-green)}
+.footer-bottom{border-top:1px solid rgba(40,167,69,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .footer-copy{font-family:var(--font-mono);font-size:.75rem;color:var(--gray2);letter-spacing:.05em}
 .footer-bottom-links{display:flex;gap:16px}
 .footer-bottom-links a{font-family:var(--font-mono);font-size:.73rem;color:var(--gray2);transition:.2s}
-.footer-bottom-links a:hover{color:var(--cyan)}
-
-/* ── CHECKOUT MODAL ── */
-.modal{display:none;position:fixed;inset:0;z-index:3000;align-items:center;justify-content:center;padding:20px}
-.modal.open{display:flex}
-.modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(4px)}
-.modal-box{position:relative;background:var(--bg2);border:1px solid rgba(0,229,255,.2);border-radius:16px;width:100%;max-width:620px;max-height:90vh;overflow-y:auto;z-index:1}
-.modal-header{padding:24px;border-bottom:1px solid rgba(0,229,255,.1);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg2);z-index:1}
-.modal-title{font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--white);letter-spacing:.04em}
-.modal-steps{display:flex;gap:0;margin:24px 24px 0}
-.modal-step{flex:1;text-align:center;position:relative;font-family:var(--font-head);font-size:.78rem;font-weight:600;color:var(--gray2);letter-spacing:.06em;text-transform:uppercase}
-.modal-step.active{color:var(--cyan)}
-.modal-step.done{color:var(--teal)}
-.modal-step-num{width:28px;height:28px;border-radius:50%;border:2px solid var(--gray2);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-size:.8rem;transition:.3s}
-.modal-step.active .modal-step-num{border-color:var(--cyan);background:var(--cyan);color:var(--bg)}
-.modal-step.done .modal-step-num{border-color:var(--teal);background:var(--teal);color:var(--bg)}
-.modal-step-line{position:absolute;top:14px;left:calc(50% + 14px);width:calc(100% - 28px);height:2px;background:rgba(0,229,255,.1)}
-.modal-step.done .modal-step-line{background:var(--teal)}
-.modal-body{padding:24px}
-.checkout-section-title{font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--white);letter-spacing:.04em;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(0,229,255,.08)}
-.payment-methods{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
-.payment-method{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid rgba(0,229,255,.1);border-radius:8px;padding:14px;cursor:pointer;transition:.2s}
-.payment-method.selected{border-color:var(--cyan);background:var(--cyan-dim)}
-.payment-method input[type=radio]{accent-color:var(--cyan)}
-.payment-method-label{font-family:var(--font-head);font-size:.92rem;font-weight:600;color:var(--white);letter-spacing:.03em}
-.payment-method-sub{font-size:.78rem;color:var(--gray)}
-.payment-method-badge{margin-left:auto;font-family:var(--font-mono);font-size:.65rem;background:var(--cyan-dim);color:var(--cyan);padding:3px 8px;border-radius:4px;border:1px solid rgba(0,229,255,.2)}
-.modal-footer{padding:16px 24px;border-top:1px solid rgba(0,229,255,.1);display:flex;gap:10px;justify-content:flex-end}
-.btn-back{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--gray);font-family:var(--font-head);font-weight:600;font-size:.9rem;padding:11px 22px;border-radius:8px;cursor:pointer;transition:.2s;letter-spacing:.04em}
-.btn-back:hover{border-color:var(--cyan);color:var(--cyan)}
-.btn-next{background:var(--cyan);color:var(--bg);font-family:var(--font-head);font-weight:700;font-size:.9rem;padding:11px 28px;border-radius:8px;border:none;cursor:pointer;letter-spacing:.05em;transition:.2s}
-.btn-next:hover{background:var(--cyan2);box-shadow:var(--glow)}
-.order-summary{background:var(--card);border-radius:8px;padding:16px;margin-bottom:20px}
-.order-summary-row{display:flex;justify-content:space-between;font-size:.88rem;color:var(--gray);margin-bottom:8px}
-.order-summary-row.total{border-top:1px solid rgba(0,229,255,.1);padding-top:8px;margin-top:4px;font-family:var(--font-head);font-size:1.05rem;color:var(--white);font-weight:600}
-.order-summary-row.total span:last-child{color:var(--cyan);font-family:var(--font-mono)}
-.delivery-options{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
-.delivery-opt{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid rgba(0,229,255,.1);border-radius:8px;padding:12px;cursor:pointer;transition:.2s}
-.delivery-opt.selected{border-color:var(--cyan)}
-.delivery-opt input[type=radio]{accent-color:var(--cyan)}
-.delivery-opt-label{font-family:var(--font-head);font-size:.9rem;font-weight:600;color:var(--white)}
-.delivery-opt-sub{font-size:.75rem;color:var(--gray)}
-.delivery-opt-price{margin-left:auto;font-family:var(--font-mono);font-size:.9rem;color:var(--cyan)}
-.confirm-check{display:flex;align-items:center;justify-content:center;width:70px;height:70px;border-radius:50%;background:rgba(0,230,118,.12);border:2px solid var(--green);margin:0 auto 20px;font-size:2rem;color:var(--green)}
-.confirm-title{font-family:var(--font-head);font-size:1.5rem;font-weight:700;color:var(--white);text-align:center;margin-bottom:6px;letter-spacing:.04em}
-.confirm-sub{text-align:center;color:var(--gray);font-size:.9rem;margin-bottom:24px}
-.confirm-details{background:var(--card);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:10px}
-.confirm-row{display:flex;justify-content:space-between;font-size:.88rem}
-.confirm-row span:first-child{color:var(--gray);font-family:var(--font-mono);font-size:.78rem;letter-spacing:.05em;text-transform:uppercase}
-.confirm-row span:last-child{color:var(--white);font-family:var(--font-head);font-weight:600;letter-spacing:.03em}
-
-/* ── ANIMATIONS ── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:none}
-.reveal-delay-1{transition-delay:.1s}
-.reveal-delay-2{transition-delay:.2s}
-.reveal-delay-3{transition-delay:.3s}
-.reveal-delay-4{transition-delay:.4s}
+.footer-bottom-links a:hover{color:var(--accent-green)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
   .hero-inner{grid-template-columns:1fr;gap:40px;padding:60px 0}
   .hero-visual{display:none}
-  .deals-grid{grid-template-columns:1fr 1fr}
-  .deal-hero-card{grid-column:1/-1}
+  .staff-spotlight{grid-template-columns:1fr;gap:30px}
   .footer-top{grid-template-columns:1fr 1fr}
-  .contact-grid{grid-template-columns:1fr}
-  .repairs-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  .nav-links,.nav-actions .btn-wa-nav{display:none}
+  .nav-links{display:none}
   .hamburger{display:flex}
-  .products-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
-  .deals-grid{grid-template-columns:1fr}
-  .services-grid{grid-template-columns:1fr}
-  .reviews-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr}
-  .trust-inner{justify-content:center}
-  .digital-hero{flex-direction:column}
-  .cart-panel{width:100%;right:-100%}
-  .hero-stats{gap:20px}
-  .modal-box{max-height:95vh}
-  .modal-steps{gap:0}
+  .staff-spotlight{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 }
 </style>
 </head>
 <body>
-
-<!-- ── OVERLAY ── -->
-<div class="overlay" id="overlay" onclick="closeCart()"></div>
 
 <!-- ── NAV ── -->
 <nav id="mainNav">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">
       <div class="logo-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c.366.092.748.092 1.113 0m-1.113 0a2.25 2.25 0 0 0-1.113 1.966v5.714m0 0a2.25 2.25 0 0 0 1.591.659h5.714a2.25 2.25 0 0 0 1.591-.659m0 0V5.104m0 10.396a2.25 2.25 0 0 0 .659-1.591v-5.714m0 0a2.25 2.25 0 0 0-.659-1.591m0 0h-5.714a2.25 2.25 0 0 0-1.591.659m7.305 7.306a3.752 3.752 0 0 0-7.305 0" /></svg>
       </div>
       <div>
         <div class="logo-text">CROSS<em>TECH</em> SYSTEMS</div>
@@ -430,45 +246,18 @@ footer{background:var(--bg);border-top:1px solid rgba(0,229,255,.1);padding:60px
       </div>
     </a>
     <div class="nav-links">
-      <a href="#shop" class="active">Shop</a>
-      <div class="dropdown">
-        <a href="#services">Services ▾</a>
-        <div class="dropdown-menu">
-          <a href="#services">Computer Repairs</a>
-          <a href="#services">Hardware Upgrades</a>
-          <a href="#services">Virus Removal</a>
-          <a href="#services">Data Recovery</a>
-          <a href="#services">Website Design</a>
-          <a href="#services">Web Hosting</a>
-          <a href="#services">SEO & Marketing</a>
-          <a href="#services">IT Consulting</a>
-          <a href="#services">CCTV & Security</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <a href="#repairs">Repairs ▾</a>
-        <div class="dropdown-menu">
-          <a href="#repairs">Screen Replacement</a>
-          <a href="#repairs">Keyboard Repair</a>
-          <a href="#repairs">Motherboard Repair</a>
-          <a href="#repairs">Battery Replacement</a>
-          <a href="#repairs">Charging Port Fix</a>
-        </div>
-      </div>
-      <a href="#deals">Deals</a>
-      <a href="#reviews">Reviews</a>
+      <a href="#hero" class="active">Home</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#testimonials">Reviews</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
-      <div class="nav-cart" onclick="toggleCart()" title="Your Cart">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:20px;height:20px"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
-        <span class="cart-count" id="cartCount">0</span>
-      </div>
       <a href="https://wa.me/27836832745" target="_blank" class="btn-wa-nav">
-        <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.875L0 24l6.29-1.512A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.497-5.202-1.366l-.374-.213-3.734.897.935-3.627-.234-.382A9.978 9.978 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        Chat on WhatsApp
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.447-.52.894-.174.447-.899 1.494-1.084 1.744-.186.249-.37.281-.648.094-.277-.188-1.144-.422-2.253-1.388-.835-.744-1.398-1.663-1.562-1.962-.165-.299-.034-.46.124-.609.127-.128.28-.334.42-.501.140-.167.187-.286.281-.477.094-.191.047-.358-.023-.474-.07-.116-.629-1.513-.863-2.069-.227-.552-.462-.477-.629-.484-.163-.005-.35-.005-.534-.005-.184 0-.48.07-.732.35-.252.28-.962.940-.962 2.292 0 1.352.985 2.657 1.122 2.840.137.184 1.942 2.969 4.713 4.167.659.29 1.174.46 1.574.587.66.207 1.26.178 1.734.108.529-.079 1.63-.666 1.858-1.31.227-.644.227-1.195.159-1.31-.068-.116-.27-.184-.57-.323m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1 1.51-16.318c1.504-.362 2.906.679 3.273 2.045.36 1.341-.213 2.741-1.571 3.926-.599.54-.124 1.409.465 1.931 2.227 1.935 5.949 1.586 7.46-.425 1.762-2.291 1.579-5.534-.379-7.594-2.212-2.324-5.844-3.319-9.227-2.465-3.393.867-5.85 3.981-5.85 7.506 0 1.886.482 3.604 1.338 5.17.051.095.051.195-.012.289l-.962 3.512a.384.384 0 0 0 .477.472l3.635-.972c.094.06.183.126.274.187 1.338.957 2.942 1.472 4.666 1.472z"/></svg>
+        WhatsApp
       </a>
-      <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <button class="hamburger" id="hamburger" onclick="toggleMobile()">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -477,75 +266,40 @@ footer{background:var(--bg);border-top:1px solid rgba(0,229,255,.1);padding:60px
 
 <!-- ── MOBILE MENU ── -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#shop" onclick="closeMobile()">🛍 Shop</a>
-  <a href="#services" onclick="closeMobile()">🔧 Services & Digital</a>
-  <a href="#repairs" onclick="closeMobile()">💻 Repairs</a>
-  <a href="#deals" onclick="closeMobile()">🔥 Deals</a>
-  <a href="#reviews" onclick="closeMobile()">⭐ Reviews</a>
+  <a href="#hero" onclick="closeMobile()">🏠 Home</a>
+  <a href="#services" onclick="closeMobile()">🔧 Services</a>
+  <a href="#gallery" onclick="closeMobile()">🖼️ Gallery</a>
+  <a href="#testimonials" onclick="closeMobile()">⭐ Reviews</a>
   <a href="#contact" onclick="closeMobile()">📍 Contact</a>
-  <div class="mob-actions">
-    <a href="https://wa.me/27836832745" target="_blank" class="btn-wa-nav">WhatsApp Chat</a>
-    <button class="btn-outline" onclick="toggleCart();closeMobile()">🛒 Cart (<span id="cartCountMob">0</span>)</button>
-  </div>
+  <a href="https://wa.me/27836832745" target="_blank" class="btn-wa-nav" style="margin-top:10px">WhatsApp Chat</a>
 </div>
 
 <!-- ── HERO ── -->
 <section id="hero">
+  <div class="circuit-bg"></div>
   <div class="hero-grid-bg"></div>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
   <div class="hero-scan"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badge reveal">
+      <div class="hero-badge">
         <span class="hero-badge-dot"></span>
         Now Open · Randburg / Ferndale, Johannesburg
       </div>
-      <h1 class="reveal reveal-delay-1">
+      <h1>
         <span class="line1">Technology That</span><br>
         <span class="line2">Works For You</span>
       </h1>
-      <p class="hero-desc reveal reveal-delay-2">Premium laptops, gaming PCs, accessories, professional repairs, and cutting-edge digital services — all under one roof in Randburg.</p>
-      <div class="hero-actions reveal reveal-delay-3">
-        <a href="#shop" class="btn-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:18px;height:18px"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"/></svg>
-          Browse Shop
-        </a>
-        <a href="https://wa.me/27836832745" target="_blank" class="btn-outline">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.875L0 24l6.29-1.512A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.497-5.202-1.366l-.374-.213-3.734.897.935-3.627-.234-.382A9.978 9.978 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          +27 83 683 2745
-        </a>
-        <a href="#services" class="btn-outline">Digital Services →</a>
+      <p class="hero-desc">Premium laptops, gaming PCs, professional repairs, and cutting-edge digital services — all under one roof in Randburg. Your trusted tech partner since 2020.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-primary">Explore Services</a>
+        <a href="https://wa.me/27836832745" target="_blank" class="btn-outline">📲 +27 83 683 2745</a>
       </div>
-      <div class="hero-stats reveal reveal-delay-4">
+      <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-num">5★</div><div class="hero-stat-label">Google Rating</div></div>
         <div class="hero-stat"><div class="hero-stat-num">500+</div><div class="hero-stat-label">Happy Clients</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">1yr</div><div class="hero-stat-label">Warranty</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">7-Day</div><div class="hero-stat-label">Returns</div></div>
-      </div>
-    </div>
-    <div class="hero-visual reveal reveal-delay-2">
-      <div style="position:relative">
-        <div class="hero-floating top-left">
-          <div class="float-label">Fast Delivery</div>
-          <div class="float-val">Nationwide 🚚</div>
-        </div>
-        <div class="hero-screen">
-          <div class="hero-screen-header">
-            <div class="screen-dot"></div><div class="screen-dot"></div><div class="screen-dot"></div>
-            <div class="screen-url">crosstechz.co.za/shop</div>
-          </div>
-          <div class="mockup-store">
-            <div class="mockup-product"><div class="mockup-img">💻</div><div class="mockup-name">ASUS ROG Strix G16</div><div class="mockup-price">R 34,999</div></div>
-            <div class="mockup-product"><div class="mockup-img">🖥️</div><div class="mockup-name">Gaming PC Build</div><div class="mockup-price">R 18,500</div></div>
-            <div class="mockup-product"><div class="mockup-img">🖨️</div><div class="mockup-name">HP LaserJet Pro</div><div class="mockup-price">R 4,299</div></div>
-            <div class="mockup-product"><div class="mockup-img">🌐</div><div class="mockup-name">Website Design</div><div class="mockup-price">From R 2,500</div></div>
-          </div>
-        </div>
-        <div class="hero-floating bot-right">
-          <div class="float-stars">★★★★★</div>
-          <div class="float-val">Trusted Seller</div>
-        </div>
+        <div class="hero-stat"><div class="hero-stat-num">6yrs+</div><div class="hero-stat-label">Experience</div></div>
       </div>
     </div>
   </div>
@@ -554,372 +308,223 @@ footer{background:var(--bg);border-top:1px solid rgba(0,229,255,.1);padding:60px
 <!-- ── TRUST BAR ── -->
 <div class="trust-bar">
   <div class="trust-inner">
-    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Free Diagnostics</div>
-    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Same-Day Repairs</div>
-    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>1-Year Warranty</div>
-    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>Nationwide Delivery</div>
-    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"/></svg>Secure Payments</div>
-    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>5-Star Rated</div>
+    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" /></svg> Quality Guaranteed</div>
+    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m0 0H3.375c-.621 0-1.125.504-1.125 1.125v2.25M21 19.5h-18m2.25-4.5h13.5m-13.5 0H3m0 0H1.125C.504 15 0 15.504 0 16.125v2.25m0 0v3.75a2.25 2.25 0 0 0 2.25 2.25h21a2.25 2.25 0 0 0 2.25-2.25v-3.75m0 0h2.226" /></svg> Free Delivery SA</div>
+    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" /></svg> Same-Day Service</div>
+    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A9.959 9.959 0 0 1 12 3c5.523 0 10 4.477 10 10S17.523 23 12 23s-10-4.477-10-10c0-1.148.18-2.257.52-3.318" /></svg> 1-Year Warranty</div>
   </div>
 </div>
 
-<!-- ── SHOP ── -->
-<section id="shop">
-  <div class="section-inner">
-    <div class="section-header-flex reveal">
-      <div>
-        <div class="section-label">Online Store</div>
-        <h2 class="section-title">Shop Premium Tech</h2>
-        <p class="section-sub" style="margin-bottom:0">Top brands. Best prices. Fast delivery across South Africa.</p>
+<!-- ── STAFF SPOTLIGHT ── -->
+<section style="padding:40px 4%;background:var(--bg)">
+  <div class="section-inner" style="margin-bottom:30px">
+    <div class="section-label">Meet Our Team</div>
+    <h2 class="section-title">Meet Charles</h2>
+  </div>
+  <div class="staff-spotlight" style="margin:0">
+    <div class="staff-photo">
+      <img src="https://via.placeholder.com/400x400/0A3D91/FFFFFF?text=Charles+Photo" alt="Charles - CrossTech Systems Manager" loading="lazy">
+    </div>
+    <div class="staff-info">
+      <h3>Charles</h3>
+      <p class="staff-role">Founder & Lead Technician</p>
+      <p class="staff-bio">With over 6 years of experience in tech repair and digital services, Charles has built CrossTech Systems into Johannesburg's most trusted tech partner. Specializing in laptop repairs, PC optimization, and custom digital solutions — Charles personally oversees every project to ensure premium quality and customer satisfaction.</p>
+      <div class="staff-badges">
+        <span class="badge">Expert Technician</span>
+        <span class="badge">Hardware Specialist</span>
+        <span class="badge">Digital Services</span>
+        <span class="badge">Customer First</span>
       </div>
-      <a href="#contact" class="link-all">View All Products →</a>
-    </div>
-    <div class="shop-tabs reveal">
-      <button class="shop-tab active" onclick="filterProducts('all',this)">All Products</button>
-      <button class="shop-tab" onclick="filterProducts('laptops',this)">💻 Laptops</button>
-      <button class="shop-tab" onclick="filterProducts('desktops',this)">🖥️ Desktops & PCs</button>
-      <button class="shop-tab" onclick="filterProducts('accessories',this)">🖱️ Accessories</button>
-      <button class="shop-tab" onclick="filterProducts('printers',this)">🖨️ Printers & Ink</button>
-      <button class="shop-tab" onclick="filterProducts('networking',this)">📡 Networking</button>
-    </div>
-    <div class="products-grid" id="productsGrid">
-      <!-- Products injected by JS -->
     </div>
   </div>
 </section>
 
 <!-- ── SERVICES ── -->
-<section id="services">
+<section id="services" style="background:var(--bg2)">
   <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">What We Offer</div>
-      <h2 class="section-title">Hardware & Digital Services</h2>
-      <p class="section-sub">From hands-on repairs to fully managed digital solutions — we're your all-in-one tech partner in Randburg.</p>
-    </div>
-    <div class="services-grid">
-
-      <!-- DIGITAL HERO CARD -->
-      <div class="digital-hero reveal">
-        <div class="digital-hero-text">
-          <div class="section-label" style="margin-bottom:6px">🌐 New: Digital Services</div>
-          <h3>Grow Your Business Online</h3>
-          <p>Professional website design, reliable hosting, SEO, and digital marketing — built for South African businesses ready to scale.</p>
-          <a href="#contact" class="btn-primary" style="margin-top:18px;display:inline-flex">Get a Free Quote →</a>
-        </div>
-        <div class="digital-hero-perks">
-          <div class="digital-perk"><div class="digital-perk-icon">🎨</div><div class="digital-perk-label">Web Design</div><div class="digital-perk-sub">From R 2,500</div></div>
-          <div class="digital-perk"><div class="digital-perk-icon">☁️</div><div class="digital-perk-label">Hosting</div><div class="digital-perk-sub">From R 99/mo</div></div>
-          <div class="digital-perk"><div class="digital-perk-icon">📈</div><div class="digital-perk-label">SEO</div><div class="digital-perk-sub">From R 800/mo</div></div>
-          <div class="digital-perk"><div class="digital-perk-icon">🛒</div><div class="digital-perk-label">eCommerce</div><div class="digital-perk-sub">Full Setup</div></div>
-        </div>
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Premium Tech Solutions</h2>
+    <p class="section-sub">From hands-on repairs to fully managed digital solutions — we're your all-in-one tech partner in Randburg.</p>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+      <div style="background:var(--card);border:1px solid rgba(40,167,69,.15);border-radius:12px;padding:28px;transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(40,167,69,0.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(40,167,69,0.15)';this.style.transform='none'">
+        <div style="width:50px;height:50px;border-radius:8px;background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.8rem">🔧</div>
+        <h4 style="font-family:var(--font-head);font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:8px">Computer Repairs</h4>
+        <p style="font-size:.88rem;color:var(--gray);line-height:1.7">Screen replacements, motherboard repairs, keyboard fixes, and more. Same-day service available.</p>
       </div>
-
-      <!-- SERVICE CARDS -->
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3"/></svg></div>
-        <div class="service-name">Computer & Laptop Repairs</div>
-        <p class="service-desc">Screen replacements, motherboard repairs, keyboard fixes, thermal re-paste, charging ports, and more. Same-day service available.</p>
-        <div><span class="service-tag">Hardware</span><span class="service-tag">Screen Repair</span><span class="service-tag">Data Recovery</span></div>
-        <a href="#contact" class="service-cta">Get a Quote →</a>
+      <div style="background:var(--card);border:1px solid rgba(40,167,69,.15);border-radius:12px;padding:28px;transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(40,167,69,0.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(40,167,69,0.15)';this.style.transform='none'">
+        <div style="width:50px;height:50px;border-radius:8px;background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.8rem">🌐</div>
+        <h4 style="font-family:var(--font-head);font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:8px">Web Design</h4>
+        <p style="font-size:.88rem;color:var(--gray);line-height:1.7">Custom responsive websites, landing pages, and eCommerce stores. Mobile-first design from R 2,500.</p>
       </div>
-
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM12 15.75h.008v.008H12v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg></div>
-        <div class="service-name">Virus & Malware Removal</div>
-        <p class="service-desc">Deep scan and clean of all viruses, ransomware, spyware and bloatware. Full OS tune-up included. Your data stays safe.</p>
-        <div><span class="service-tag">Security</span><span class="service-tag">OS Cleanup</span><span class="service-tag">Windows</span></div>
-        <a href="#contact" class="service-cta">Book Now →</a>
+      <div style="background:var(--card);border:1px solid rgba(40,167,69,.15);border-radius:12px;padding:28px;transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(40,167,69,0.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(40,167,69,0.15)';this.style.transform='none'">
+        <div style="width:50px;height:50px;border-radius:8px;background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.8rem">☁️</div>
+        <h4 style="font-family:var(--font-head);font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:8px">Web Hosting</h4>
+        <p style="font-size:.88rem;color:var(--gray);line-height:1.7">Fast SSD hosting, free SSL, daily backups, and 99.9% uptime. From R 99/mo.</p>
       </div>
-
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/></svg></div>
-        <div class="service-name">Hardware Upgrades</div>
-        <p class="service-desc">RAM upgrades, SSD installations, GPU and CPU swaps. Breathe new life into your old machine at a fraction of replacement cost.</p>
-        <div><span class="service-tag">RAM</span><span class="service-tag">SSD / NVMe</span><span class="service-tag">GPU Swap</span></div>
-        <a href="#contact" class="service-cta">Upgrade Now →</a>
+      <div style="background:var(--card);border:1px solid rgba(40,167,69,.15);border-radius:12px;padding:28px;transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(40,167,69,0.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(40,167,69,0.15)';this.style.transform='none'">
+        <div style="width:50px;height:50px;border-radius:8px;background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.8rem">📈</div>
+        <h4 style="font-family:var(--font-head);font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:8px">SEO & Marketing</h4>
+        <p style="font-size:.88rem;color:var(--gray);line-height:1.7">Rank higher on Google, grow social presence. From R 800/mo.</p>
       </div>
-
-      <div class="service-card reveal reveal-delay-1" style="border-color:rgba(0,191,165,.2)">
-        <div class="service-price-tag">From R 2,500</div>
-        <div class="service-icon" style="background:rgba(0,191,165,.12);border-color:rgba(0,191,165,.25)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" style="color:var(--teal)"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253M3 12a8.959 8.959 0 011.716-5.332"/></svg></div>
-        <div class="service-name">Website Design & Development</div>
-        <p class="service-desc">Custom responsive websites, landing pages, and eCommerce stores built for speed, SEO, and conversions. Mobile-first design.</p>
-        <div><span class="service-tag">HTML/CSS</span><span class="service-tag">WordPress</span><span class="service-tag">eCommerce</span><span class="service-tag">Mobile-First</span></div>
-        <a href="#contact" class="service-cta" style="color:var(--teal)">Get a Free Quote →</a>
+      <div style="background:var(--card);border:1px solid rgba(40,167,69,.15);border-radius:12px;padding:28px;transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(40,167,69,0.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(40,167,69,0.15)';this.style.transform='none'">
+        <div style="width:50px;height:50px;border-radius:8px;background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.8rem">📹</div>
+        <h4 style="font-family:var(--font-head);font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:8px">CCTV Installation</h4>
+        <p style="font-size:.88rem;color:var(--gray);line-height:1.7">Professional CCTV camera and alarm system installation. Professional & reliable.</p>
       </div>
-
-      <div class="service-card reveal reveal-delay-2" style="border-color:rgba(0,191,165,.2)">
-        <div class="service-price-tag">From R 99/mo</div>
-        <div class="service-icon" style="background:rgba(0,191,165,.12);border-color:rgba(0,191,165,.25)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" style="color:var(--teal)"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"/></svg></div>
-        <div class="service-name">Web Hosting & Domain</div>
-        <p class="service-desc">Fast SSD hosting, free SSL certificates, daily backups, .co.za domain registration, and 99.9% uptime guarantee. Managed for you.</p>
-        <div><span class="service-tag">SSD Hosting</span><span class="service-tag">SSL Free</span><span class="service-tag">.co.za Domains</span><span class="service-tag">99.9% Uptime</span></div>
-        <a href="#contact" class="service-cta" style="color:var(--teal)">Get Hosted →</a>
-      </div>
-
-      <div class="service-card reveal reveal-delay-3" style="border-color:rgba(0,191,165,.2)">
-        <div class="service-price-tag">From R 800/mo</div>
-        <div class="service-icon" style="background:rgba(0,191,165,.12);border-color:rgba(0,191,165,.25)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" style="color:var(--teal)"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg></div>
-        <div class="service-name">SEO & Digital Marketing</div>
-        <p class="service-desc">Rank higher on Google, grow your social presence, and drive real leads with data-driven SEO, Google Ads, and social media management.</p>
-        <div><span class="service-tag">Google SEO</span><span class="service-tag">Google Ads</span><span class="service-tag">Social Media</span><span class="service-tag">Analytics</span></div>
-        <a href="#contact" class="service-cta" style="color:var(--teal)">Grow Online →</a>
-      </div>
-
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"/></svg></div>
-        <div class="service-name">CCTV & Security Systems</div>
-        <p class="service-desc">Supply and professional installation of CCTV cameras, alarm systems and access control for homes and businesses across Johannesburg.</p>
-        <div><span class="service-tag">CCTV Install</span><span class="service-tag">Alarm Systems</span><span class="service-tag">Access Control</span></div>
-        <a href="#contact" class="service-cta">Get a Quote →</a>
-      </div>
-
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg></div>
-        <div class="service-name">IT Consulting & Support</div>
-        <p class="service-desc">Remote and on-site IT support, network setup, Microsoft 365 deployment, backup solutions, and ongoing managed IT for businesses.</p>
-        <div><span class="service-tag">Remote Support</span><span class="service-tag">Network Setup</span><span class="service-tag">Microsoft 365</span></div>
-        <a href="#contact" class="service-cta">Consult Now →</a>
-      </div>
-
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 2.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125m0 5.625c0 2.278 3.694 4.125 8.25 4.125s8.25-1.847 8.25-4.125"/></svg></div>
-        <div class="service-name">Data Recovery</div>
-        <p class="service-desc">Professional recovery of lost, deleted, or corrupted data from hard drives, SSDs, USBs, and memory cards. No data, no charge policy.</p>
-        <div><span class="service-tag">HDD Recovery</span><span class="service-tag">SSD Recovery</span><span class="service-tag">USB / SD Card</span></div>
-        <a href="#contact" class="service-cta">Recover Data →</a>
+      <div style="background:var(--card);border:1px solid rgba(40,167,69,.15);border-radius:12px;padding:28px;transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(40,167,69,0.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(40,167,69,0.15)';this.style.transform='none'">
+        <div style="width:50px;height:50px;border-radius:8px;background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.8rem">💼</div>
+        <h4 style="font-family:var(--font-head);font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:8px">IT Consulting</h4>
+        <p style="font-size:.88rem;color:var(--gray);line-height:1.7">Remote and on-site IT support, network setup, Microsoft 365 deployment.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FEATURED DEALS ── -->
-<section id="deals">
-  <div class="section-inner">
-    <div class="section-header-flex reveal">
-      <div>
-        <div class="section-label">Hot Deals</div>
-        <h2 class="section-title">Featured Specials</h2>
-        <p class="section-sub" style="margin-bottom:0">Limited stock. Best prices in Johannesburg. Chat on WhatsApp to confirm availability.</p>
-      </div>
-      <a href="https://wa.me/27836832745" target="_blank" class="link-all">WhatsApp for Stock →</a>
+<!-- ── GALLERY ── -->
+<section id="gallery" class="gallery-section">
+  <div class="section-inner" style="margin-bottom:40px">
+    <div class="section-label">Visual Portfolio</div>
+    <h2 class="section-title">Shop & Product Gallery</h2>
+    <p class="section-sub">Professional work environment and premium products showcase.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x400/0d1624/FFFFFF?text=Shop+Front" alt="CrossTech Systems shop front" loading="lazy">
     </div>
-    <div class="deals-grid reveal">
-      <div class="deal-hero-card">
-        <div class="deal-hero-emoji">💻</div>
-        <div class="deal-hero-name">ASUS ROG Strix G16</div>
-        <div class="deal-hero-specs">Intel Core i9-13980HX · 16GB DDR5 · 1TB NVMe SSD<br>NVIDIA RTX 4070 8GB · 16" QHD+ 240Hz · Win 11</div>
-        <div class="deal-hero-price">R 34,999</div>
-        <div class="deal-hero-old">Was R 42,999</div>
-        <div class="deal-savings">You save R 8,000 🎉</div>
-        <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap">
-          <button class="btn-primary" onclick="addToCart('ASUS ROG Strix G16','💻',34999)">Add to Cart</button>
-          <a href="https://wa.me/27836832745?text=Hi!%20I'm%20interested%20in%20the%20ASUS%20ROG%20Strix%20G16%20deal" target="_blank" class="btn-outline">Chat on WhatsApp</a>
-        </div>
-      </div>
-      <div class="deal-side-card">
-        <div class="deal-item" onclick="addToCart('Logitech G502 HERO','🖱️',1299)">
-          <div class="deal-item-emoji">🖱️</div>
-          <div><div class="deal-item-name">Logitech G502 HERO</div><div class="deal-item-spec">Gaming Mouse · 25,600 DPI</div><div class="deal-item-price">R 1,299</div></div>
-        </div>
-        <div class="deal-item" onclick="addToCart('HP HyperX Cloud III','🎧',2199)">
-          <div class="deal-item-emoji">🎧</div>
-          <div><div class="deal-item-name">HP HyperX Cloud III</div><div class="deal-item-spec">Gaming Headset · 7.1 Surround</div><div class="deal-item-price">R 2,199</div></div>
-        </div>
-        <div class="deal-item" onclick="addToCart('Samsung 27" Curved Monitor','🖥️',5499)">
-          <div class="deal-item-emoji">🖥️</div>
-          <div><div class="deal-item-name">Samsung 27" Curved</div><div class="deal-item-spec">144Hz · FHD · FreeSync</div><div class="deal-item-price">R 5,499</div><div class="deal-savings" style="font-size:.65rem">Save R 1,500</div></div>
-        </div>
-        <div class="deal-item" onclick="addToCart('Website Package - Starter','🌐',2500)">
-          <div class="deal-item-emoji">🌐</div>
-          <div><div class="deal-item-name">Website Starter Pack</div><div class="deal-item-spec">Design + Hosting + Domain 1yr</div><div class="deal-item-price">R 2,500</div><div class="deal-savings" style="font-size:.65rem">Best Value</div></div>
-        </div>
-      </div>
-      <div class="deal-side-card">
-        <div class="deal-item" onclick="addToCart('Acer Nitro 5','💻',14999)">
-          <div class="deal-item-emoji">💻</div>
-          <div><div class="deal-item-name">Acer Nitro 5</div><div class="deal-item-spec">Ryzen 5 · 8GB · 512GB · RTX 3050</div><div class="deal-item-price">R 14,999</div><div class="deal-savings" style="font-size:.65rem">Save R 3,000</div></div>
-        </div>
-        <div class="deal-item" onclick="addToCart('Epson EcoTank L3250','🖨️',3799)">
-          <div class="deal-item-emoji">🖨️</div>
-          <div><div class="deal-item-name">Epson EcoTank L3250</div><div class="deal-item-spec">WiFi · Print/Scan/Copy</div><div class="deal-item-price">R 3,799</div></div>
-        </div>
-        <div class="deal-item" onclick="addToCart('TP-Link Deco AX3000','📡',2899)">
-          <div class="deal-item-emoji">📡</div>
-          <div><div class="deal-item-name">TP-Link Deco AX3000</div><div class="deal-item-spec">WiFi 6 Mesh System · 3-Pack</div><div class="deal-item-price">R 2,899</div></div>
-        </div>
-        <div class="deal-item" onclick="addToCart('SEO Package - 3 Months','📈',2400)">
-          <div class="deal-item-emoji">📈</div>
-          <div><div class="deal-item-name">SEO 3-Month Package</div><div class="deal-item-spec">Google Rankings + Reporting</div><div class="deal-item-price">R 2,400/mo</div><div class="deal-savings" style="font-size:.65rem">Free Setup</div></div>
-        </div>
-      </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x400/0d1624/FFFFFF?text=Repair+Station" alt="Professional repair station" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x400/0d1624/FFFFFF?text=Laptops" alt="Premium laptops" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x400/0d1624/FFFFFF?text=Hardware" alt="Computer hardware" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x400/0d1624/FFFFFF?text=Accessories" alt="Tech accessories" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/400x400/0d1624/FFFFFF?text=Services" alt="Service showcase" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- ── REPAIRS ── -->
-<section id="repairs">
-  <div class="section-inner">
-    <div class="section-header-flex reveal">
-      <div>
-        <div class="section-label">Repair Services</div>
-        <h2 class="section-title">Expert Repairs — Fast</h2>
-        <p class="section-sub" style="margin-bottom:0">Most repairs completed same-day. All work comes with a 90-day parts and labour warranty.</p>
-      </div>
-      <a href="#contact" class="link-all">Book a Repair →</a>
+<!-- ── CERTIFICATES ── -->
+<section class="certificates-section">
+  <div class="section-inner" style="margin-bottom:40px">
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Certifications & Awards</h2>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-item">
+      <img src="https://via.placeholder.com/160x120/142236/FFFFFF?text=Microsoft+Cert" alt="Microsoft Certification">
+      <p>Microsoft Certified</p>
     </div>
-    <div class="repairs-grid">
-      <div class="repair-list reveal">
-        <div class="repair-item"><div class="repair-icon">📱</div><div><div class="repair-name">Laptop Screen Replacement</div><div class="repair-price">From R 850</div><div class="repair-time">⏱ 2–4 hrs</div></div></div>
-        <div class="repair-item"><div class="repair-icon">⌨️</div><div><div class="repair-name">Keyboard Replacement</div><div class="repair-price">From R 550</div><div class="repair-time">⏱ 1–2 hrs</div></div></div>
-        <div class="repair-item"><div class="repair-icon">🔋</div><div><div class="repair-name">Battery Replacement</div><div class="repair-price">From R 650</div><div class="repair-time">⏱ 1 hr</div></div></div>
-        <div class="repair-item"><div class="repair-icon">🔌</div><div><div class="repair-name">Charging Port Repair</div><div class="repair-price">From R 400</div><div class="repair-time">⏱ Same-Day</div></div></div>
-        <div class="repair-item"><div class="repair-icon">🧠</div><div><div class="repair-name">Motherboard Repair</div><div class="repair-price">Quote Required</div><div class="repair-time">⏱ 24–48 hrs</div></div></div>
-        <div class="repair-item"><div class="repair-icon">💾</div><div><div class="repair-name">SSD / RAM Upgrade</div><div class="repair-price">From R 250 (labour)</div><div class="repair-time">⏱ 30–60 mins</div></div></div>
-        <div class="repair-item"><div class="repair-icon">🛡️</div><div><div class="repair-name">Virus Removal & OS Tune-Up</div><div class="repair-price">From R 350</div><div class="repair-time">⏱ Same-Day</div></div></div>
-        <div class="repair-item"><div class="repair-icon">💿</div><div><div class="repair-name">Data Recovery</div><div class="repair-price">From R 500</div><div class="repair-time">⏱ 24–72 hrs</div></div></div>
-      </div>
-      <div class="repair-visual reveal reveal-delay-2">
-        <span class="repair-big-emoji">🔧</span>
-        <div class="section-title" style="font-size:1.6rem;margin-bottom:12px">Why Choose Us?</div>
-        <p style="color:var(--gray);font-size:.9rem;line-height:1.75;margin-bottom:24px">We diagnose for free, give honest quotes, and only fix what actually needs fixing. No hidden charges — ever.</p>
-        <div class="repair-guarantee">
-          <div class="guarantee-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Free, no-obligation diagnostics</div>
-          <div class="guarantee-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>90-day parts & labour warranty</div>
-          <div class="guarantee-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Genuine OEM parts used</div>
-          <div class="guarantee-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Same-day service on most repairs</div>
-          <div class="guarantee-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>No fix, no fee policy</div>
-        </div>
-        <a href="#contact" class="btn-primary" style="margin-top:24px;width:100%;justify-content:center">Book a Repair →</a>
-      </div>
+    <div class="cert-item">
+      <img src="https://via.placeholder.com/160x120/142236/FFFFFF?text=CompTIA+Cert" alt="CompTIA Certification">
+      <p>CompTIA A+ Certified</p>
+    </div>
+    <div class="cert-item">
+      <img src="https://via.placeholder.com/160x120/142236/FFFFFF?text=Apple+Cert" alt="Apple Certification">
+      <p>Apple Certified</p>
+    </div>
+    <div class="cert-item">
+      <img src="https://via.placeholder.com/160x120/142236/FFFFFF?text=5Star+Award" alt="5-Star Google Award">
+      <p>5-Star Google Rating</p>
     </div>
   </div>
 </section>
 
-<!-- ── REVIEWS ── -->
-<section id="reviews">
-  <div class="section-inner">
-    <div class="reveal" style="text-align:center;max-width:520px;margin:0 auto 48px">
-      <div class="section-label">Customer Reviews</div>
-      <h2 class="section-title">Trusted by Hundreds<br>Across Johannesburg</h2>
-      <p style="color:var(--gray);font-size:.9rem">Real reviews from real customers. 5.0 stars on Google.</p>
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div class="section-inner" style="text-align:center;margin-bottom:48px;max-width:520px;margin-left:auto;margin-right:auto">
+    <div class="section-label" style="justify-content:center;display:flex;gap:8px">Customer Reviews</div>
+    <h2 class="section-title">Trusted by 500+ Clients</h2>
+    <p style="color:var(--gray);font-size:.9rem">Real reviews from real customers. 5.0 stars on Google.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Charles fixed my laptop screen in under 3 hours. Price was exactly what he quoted — no surprises. Absolutely will be back. Best tech shop in Randburg!"</p>
+      <div class="review-author"><div class="review-avatar">TM</div><div><div class="review-name">Thabo Mokoena</div><div class="review-meta">Screen Repair · Randburg</div></div></div>
     </div>
-    <div class="reviews-grid">
-      <div class="review-card reveal reveal-delay-1">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Charles fixed my laptop screen in under 3 hours. Price was exactly what he quoted — no surprises. Absolutely will be back. Best tech shop in Randburg!"</p>
-        <div class="review-author"><div class="review-avatar">TM</div><div><div class="review-name">Thabo Mokoena</div><div class="review-meta">Screen Repair · Randburg</div></div></div>
-      </div>
-      <div class="review-card reveal reveal-delay-2">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Had a virus destroying my PC files. CrossTech removed everything, upgraded my RAM to 16GB, and it runs like new. Very professional and fast service."</p>
-        <div class="review-author"><div class="review-avatar">SN</div><div><div class="review-name">Siphokazi Nkosi</div><div class="review-meta">Virus Removal & Upgrade · Ferndale</div></div></div>
-      </div>
-      <div class="review-card reveal reveal-delay-3">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"They built our company website in just 5 days — it looks amazing and ranks on Google already. The hosting package is also great value. Highly recommend!"</p>
-        <div class="review-author"><div class="review-avatar">PV</div><div><div class="review-name">Pieter Van Wyk</div><div class="review-meta">Website Design & SEO</div></div></div>
-      </div>
-      <div class="review-card reveal reveal-delay-1">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Bought my gaming laptop here — ASUS ROG, incredible price compared to other stores. Delivery was next day. Charles is knowledgeable and helpful. 10/10!"</p>
-        <div class="review-author"><div class="review-avatar">KD</div><div><div class="review-name">Kwame Dube</div><div class="review-meta">Laptop Purchase · Sandton</div></div></div>
-      </div>
-      <div class="review-card reveal reveal-delay-2">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Data recovery was successful — I thought my photos were gone forever. They recovered 98% of my files from a dead hard drive. Lifesavers, truly!"</p>
-        <div class="review-author"><div class="review-avatar">RL</div><div><div class="review-name">Rene Louw</div><div class="review-meta">Data Recovery · Roodepoort</div></div></div>
-      </div>
-      <div class="review-card reveal reveal-delay-3">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Amazing CCTV installation at our shop. Professional, neat cabling, and they explained the system clearly. Cameras are crystal clear. Very satisfied with the service."</p>
-        <div class="review-author"><div class="review-avatar">AM</div><div><div class="review-name">Ayanda Mthembu</div><div class="review-meta">CCTV Installation · Johannesburg</div></div></div>
-      </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Had a virus destroying my PC files. CrossTech removed everything, upgraded my RAM to 16GB, and it runs like new. Very professional and fast service."</p>
+      <div class="review-author"><div class="review-avatar">SN</div><div><div class="review-name">Siphokazi Nkosi</div><div class="review-meta">Virus Removal · Ferndale</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"They built our company website in just 5 days — it looks amazing and ranks on Google already. The hosting package is also great value. Highly recommend!"</p>
+      <div class="review-author"><div class="review-avatar">PV</div><div><div class="review-name">Pieter Van Wyk</div><div class="review-meta">Website Design</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Bought my gaming laptop here — ASUS ROG, incredible price compared to other stores. Charles is knowledgeable and helpful. 10/10!"</p>
+      <div class="review-author"><div class="review-avatar">KD</div><div><div class="review-name">Kwame Dube</div><div class="review-meta">Laptop Purchase</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Data recovery was successful — I thought my photos were gone forever. They recovered 98% of my files from a dead hard drive. Lifesavers!"</p>
+      <div class="review-author"><div class="review-avatar">RL</div><div><div class="review-name">Rene Louw</div><div class="review-meta">Data Recovery</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Amazing CCTV installation at our shop. Professional, neat cabling, clear cameras. Very satisfied with the service. Would use them again!"</p>
+      <div class="review-author"><div class="review-avatar">AM</div><div><div class="review-name">Ayanda Mthembu</div><div class="review-meta">CCTV Installation</div></div></div>
     </div>
   </div>
 </section>
 
 <!-- ── CONTACT ── -->
-<section id="contact">
+<section id="contact" style="background:var(--bg2)">
   <div class="section-inner">
-    <div class="reveal" style="margin-bottom:48px">
+    <div style="margin-bottom:48px">
       <div class="section-label">Get In Touch</div>
       <h2 class="section-title">Let's Work Together</h2>
       <p class="section-sub">Send us a message and we'll get back to you via WhatsApp within 30 minutes during business hours.</p>
     </div>
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <div class="contact-item">
-          <div class="contact-item-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></div>
-          <div><div class="contact-item-label">Location</div><div class="contact-item-val">Randburg / Ferndale</div><div class="contact-item-sub">12 Hill St, Ferndale, 2160<br>Johannesburg, South Africa</div></div>
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start">
+      <div>
+        <div style="display:flex;gap:14px;margin-bottom:24px;align-items:flex-start">
+          <div style="width:44px;height:44px;background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.4rem">📍</div>
+          <div><div style="font-family:var(--font-mono);font-size:.7rem;color:var(--gray2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Location</div><div style="font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--white)">12 Hill Street, Ferndale</div><div style="font-size:.82rem;color:var(--gray)">Johannesburg, 2160, South Africa</div></div>
         </div>
-        <div class="contact-item">
-          <div class="contact-item-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div>
-          <div><div class="contact-item-label">Phone / WhatsApp</div><div class="contact-item-val">+27 83 683 2745</div><div class="contact-item-sub">Chat for fastest response</div></div>
+        <div style="display:flex;gap:14px;margin-bottom:24px;align-items:flex-start">
+          <div style="width:44px;height:44px;background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.4rem">📱</div>
+          <div><div style="font-family:var(--font-mono);font-size:.7rem;color:var(--gray2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Phone / WhatsApp</div><div style="font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--white)">+27 83 683 2745</div><div style="font-size:.82rem;color:var(--gray)">Chat for fastest response</div></div>
         </div>
-        <div class="contact-item">
-          <div class="contact-item-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
-          <div><div class="contact-item-label">Email</div><div class="contact-item-val">sales@crosstechz.co.za</div></div>
+        <div style="display:flex;gap:14px;margin-bottom:24px;align-items:flex-start">
+          <div style="width:44px;height:44px;background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.4rem">✉️</div>
+          <div><div style="font-family:var(--font-mono);font-size:.7rem;color:var(--gray2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Email</div><div style="font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--white)">sales@crosstechz.co.za</div></div>
         </div>
-        <div class="contact-item">
-          <div class="contact-item-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-          <div>
-            <div class="contact-item-label">Business Hours</div>
-            <div class="hours-grid">
-              <div class="hours-row"><span>Mon – Fri</span><span>09:00 – 18:00</span></div>
-              <div class="hours-row"><span>Saturday</span><span>09:00 – 14:00</span></div>
-              <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
-            </div>
-          </div>
+        <div style="display:flex;gap:14px;align-items:flex-start">
+          <div style="width:44px;height:44px;background:rgba(40,167,69,0.12);border:1px solid rgba(40,167,69,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.4rem">🕐</div>
+          <div><div style="font-family:var(--font-mono);font-size:.7rem;color:var(--gray2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">Business Hours</div><div style="display:grid;gap:4px"><div style="display:flex;justify-content:space-between;font-size:.82rem;color:var(--gray)"><span>Mon – Fri</span><span style="color:var(--accent-green)">09:00 – 18:00</span></div><div style="display:flex;justify-content:space-between;font-size:.82rem;color:var(--gray)"><span>Saturday</span><span style="color:var(--accent-green)">09:00 – 14:00</span></div><div style="display:flex;justify-content:space-between;font-size:.82rem;color:var(--gray)"><span>Sunday</span><span style="color:var(--red)">Closed</span></div></div></div>
         </div>
-        <a href="https://wa.me/27836832745" target="_blank" class="btn-primary" style="justify-content:center">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.875L0 24l6.29-1.512A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.497-5.202-1.366l-.374-.213-3.734.897.935-3.627-.234-.382A9.978 9.978 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      </div>
+      <div>
+        <a href="https://wa.me/27836832745?text=Hi%20CrossTech!%20I%20need%20help%20with..." target="_blank" class="btn-primary" style="width:100%;justify-content:center;margin-bottom:24px;padding:16px;font-size:1.05rem">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.447-.52.894-.174.447-.899 1.494-1.084 1.744-.186.249-.37.281-.648.094-.277-.188-1.144-.422-2.253-1.388-.835-.744-1.398-1.663-1.562-1.962-.165-.299-.034-.46.124-.609.127-.128.28-.334.42-.501.140-.167.187-.286.281-.477.094-.191.047-.358-.023-.474-.07-.116-.629-1.513-.863-2.069-.227-.552-.462-.477-.629-.484-.163-.005-.35-.005-.534-.005-.184 0-.48.07-.732.35-.252.28-.962.940-.962 2.292 0 1.352.985 2.657 1.122 2.84.137.184 1.942 2.969 4.713 4.167.659.29 1.174.46 1.574.587.66.207 1.26.178 1.734.108.529-.079 1.63-.666 1.858-1.31.227-.644.227-1.195.159-1.31-.068-.116-.27-.184-.57-.323m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1 1.51-16.318c1.504-.362 2.906.679 3.273 2.045.36 1.341-.213 2.741-1.571 3.926-.599.54-.124 1.409.465 1.931 2.227 1.935 5.949 1.586 7.46-.425 1.762-2.291 1.579-5.534-.379-7.594-2.212-2.324-5.844-3.319-9.227-2.465-3.393.867-5.85 3.981-5.85 7.506 0 1.886.482 3.604 1.338 5.17.051.095.051.195-.012.289l-.962 3.512a.384.384 0 0 0 .477.472l3.635-.972c.094.06.183.126.274.187 1.338.957 2.942 1.472 4.666 1.472z"/></svg>
           Chat on WhatsApp Now
         </a>
-      </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <div class="form-title">Send Us a Message</div>
-        <div class="form-success" id="formSuccess">✅ Message sent! We'll WhatsApp you shortly.</div>
-        <form id="contactForm" onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-group"><label class="form-label">Full Name *</label><input class="form-input" id="name" placeholder="Your name" required></div>
-            <div class="form-group"><label class="form-label">Phone *</label><input class="form-input" id="phone" placeholder="+27 XX XXX XXXX" required></div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Service Needed *</label>
-            <select class="form-input" id="service" required>
-              <option value="">Select a service...</option>
-              <optgroup label="🔧 Repairs & Hardware">
-                <option>Laptop / PC Repair</option>
-                <option>Screen Replacement</option>
-                <option>Virus Removal</option>
-                <option>Data Recovery</option>
-                <option>Hardware Upgrade (RAM/SSD)</option>
-                <option>CCTV Installation</option>
-              </optgroup>
-              <optgroup label="🌐 Digital Services">
-                <option>Website Design</option>
-                <option>Web Hosting & Domain</option>
-                <option>SEO & Digital Marketing</option>
-                <option>eCommerce Store</option>
-                <option>IT Consulting</option>
-              </optgroup>
-              <optgroup label="🛍 Products">
-                <option>Laptop Purchase</option>
-                <option>Desktop / PC Purchase</option>
-                <option>Accessories & Peripherals</option>
-                <option>Printer & Ink</option>
-                <option>Networking Equipment</option>
-              </optgroup>
-              <option>General Enquiry</option>
+        <div style="background:var(--card);border:1px solid rgba(40,167,69,0.12);border-radius:12px;padding:24px">
+          <h4 style="font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--white);margin-bottom:16px;letter-spacing:.04em">Quick Enquiry</h4>
+          <form style="display:flex;flex-direction:column;gap:12px">
+            <input type="text" placeholder="Your Name" style="background:var(--bg2);border:1px solid rgba(40,167,69,0.15);border-radius:6px;padding:10px 14px;color:var(--white);font-family:var(--font-body);font-size:.9rem;outline:none;transition:all .2s" onfocus="this.style.borderColor='rgba(40,167,69,0.4)'" onblur="this.style.borderColor='rgba(40,167,69,0.15)'">
+            <input type="email" placeholder="Your Email" style="background:var(--bg2);border:1px solid rgba(40,167,69,0.15);border-radius:6px;padding:10px 14px;color:var(--white);font-family:var(--font-body);font-size:.9rem;outline:none;transition:all .2s" onfocus="this.style.borderColor='rgba(40,167,69,0.4)'" onblur="this.style.borderColor='rgba(40,167,69,0.15)'">
+            <select style="background:var(--bg2);border:1px solid rgba(40,167,69,0.15);border-radius:6px;padding:10px 14px;color:var(--gray);font-family:var(--font-body);font-size:.9rem;outline:none;transition:all .2s;cursor:pointer" onfocus="this.style.borderColor='rgba(40,167,69,0.4)'" onblur="this.style.borderColor='rgba(40,167,69,0.15)'">
+              <option>Select Service...</option>
+              <option>Laptop Repair</option>
+              <option>Web Design</option>
+              <option>IT Support</option>
+              <option>Other</option>
             </select>
-          </div>
-          <div class="form-group"><label class="form-label">Message *</label><textarea class="form-input" id="message" rows="4" placeholder="Describe your issue or what you need..." required style="resize:vertical"></textarea></div>
-          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:14px">
-            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.875L0 24l6.29-1.512A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.497-5.202-1.366l-.374-.213-3.734.897.935-3.627-.234-.382A9.978 9.978 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-            Send via WhatsApp
-          </button>
-        </form>
+            <textarea placeholder="Your Message..." rows="3" style="background:var(--bg2);border:1px solid rgba(40,167,69,0.15);border-radius:6px;padding:10px 14px;color:var(--white);font-family:var(--font-body);font-size:.9rem;outline:none;transition:all .2s;resize:vertical" onfocus="this.style.borderColor='rgba(40,167,69,0.4)'" onblur="this.style.borderColor='rgba(40,167,69,0.15)'"></textarea>
+            <button type="submit" class="btn-primary" style="padding:12px;font-size:.95rem">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -930,54 +535,48 @@ footer{background:var(--bg);border-top:1px solid rgba(0,229,255,.1);padding:60px
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="nav-logo" style="margin-bottom:0">
-          <div class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z"/></svg></div>
+        <a href="#hero" class="nav-logo" style="margin-bottom:12px">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c.366.092.748.092 1.113 0m-1.113 0a2.25 2.25 0 0 0-1.113 1.966v5.714m0 0a2.25 2.25 0 0 0 1.591.659h5.714a2.25 2.25 0 0 0 1.591-.659m0 0V5.104m0 10.396a2.25 2.25 0 0 0 .659-1.591v-5.714m0 0a2.25 2.25 0 0 0-.659-1.591m0 0h-5.714a2.25 2.25 0 0 0-1.591.659m7.305 7.306a3.752 3.752 0 0 0-7.305 0" /></svg>
+          </div>
           <div><div class="logo-text">CROSS<em>TECH</em> SYSTEMS</div><span class="logo-sub">Randburg / Ferndale · Est. 2020</span></div>
-        </div>
-        <p>Premium laptops, PC repairs, CCTV, website design, hosting and IT services in Randburg/Ferndale, Johannesburg. Trusted by 500+ clients.</p>
+        </a>
+        <p>Premium laptops, PC repairs, web design, hosting and IT services in Randburg/Ferndale, Johannesburg. Trusted by 500+ clients.</p>
         <div class="footer-social">
-          <a href="#" class="social-btn" title="Facebook">f</a>
-          <a href="#" class="social-btn" title="Instagram">ig</a>
-          <a href="#" class="social-btn" title="TikTok">tt</a>
-          <a href="https://wa.me/27836832745" class="social-btn" title="WhatsApp">wa</a>
+          <a href="https://wa.me/27836832745" class="social-btn" title="WhatsApp">WA</a>
+          <a href="#" class="social-btn" title="Facebook">FB</a>
+          <a href="#" class="social-btn" title="Instagram">IG</a>
+          <a href="#" class="social-btn" title="LinkedIn">LI</a>
         </div>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Shop</div>
-        <a href="#shop">Laptops</a>
-        <a href="#shop">Desktops & PCs</a>
-        <a href="#shop">Accessories</a>
-        <a href="#shop">Printers & Ink</a>
-        <a href="#shop">Networking</a>
-        <a href="#deals">Featured Deals</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Services</div>
         <a href="#services">Computer Repairs</a>
-        <a href="#services">Virus Removal</a>
-        <a href="#services">Data Recovery</a>
-        <a href="#services">Hardware Upgrades</a>
-        <a href="#services">Website Design</a>
+        <a href="#services">Web Design</a>
         <a href="#services">Web Hosting</a>
         <a href="#services">SEO & Marketing</a>
         <a href="#services">CCTV Installation</a>
         <a href="#services">IT Consulting</a>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title">Support</div>
-        <a href="#contact">Contact Us</a>
-        <a href="#contact">Book a Repair</a>
-        <a href="#contact">Get a Quote</a>
-        <a href="https://wa.me/27836832745" target="_blank">WhatsApp Chat</a>
-        <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(0,229,255,.08)">
-          <div class="contact-item-label" style="margin-bottom:4px">Mon – Fri: 09:00 – 18:00</div>
-          <div class="contact-item-label">Saturday: 09:00 – 14:00</div>
-          <a href="tel:+27836832745" style="font-family:var(--font-head);font-size:1rem;color:var(--cyan);margin-top:10px;display:block">+27 83 683 2745</a>
+        <div class="footer-col-title">Company</div>
+        <a href="#hero">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <a href="tel:+27836832745">📱 +27 83 683 2745</a>
+        <a href="mailto:sales@crosstechz.co.za">✉️ sales@crosstechz.co.za</a>
+        <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(40,167,69,0.08)">
+          <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--gray2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Mon – Fri: 09:00 – 18:00</div>
+          <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--gray2);letter-spacing:.08em;text-transform:uppercase">Sat: 09:00 – 14:00</div>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 CrossTech Systems. All rights reserved. | Randburg / Ferndale, Johannesburg, South Africa</div>
+      <div class="footer-copy">© 2026 CrossTech Systems. All rights reserved. | Randburg / Ferndale, Johannesburg, South Africa</div>
       <div class="footer-bottom-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms & Conditions</a>
@@ -987,290 +586,17 @@ footer{background:var(--bg);border-top:1px solid rgba(0,229,255,.1);padding:60px
   </div>
 </footer>
 
-<!-- ── CART PANEL ── -->
-<div class="cart-panel" id="cartPanel">
-  <div class="cart-header">
-    <div class="cart-title">Your Cart 🛒</div>
-    <button class="cart-close" onclick="closeCart()">✕</button>
-  </div>
-  <div class="cart-items" id="cartItems">
-    <div class="cart-empty" id="cartEmpty">
-      <div class="cart-empty-icon">🛒</div>
-      <p>Your cart is empty</p>
-    </div>
-  </div>
-  <div class="cart-footer">
-    <div class="cart-total-row">
-      <span class="cart-total-label">TOTAL (incl. VAT)</span>
-      <span class="cart-total-val" id="cartTotal">R 0</span>
-    </div>
-    <button class="btn-checkout" onclick="openCheckout()">Proceed to Checkout →</button>
-    <button class="btn-wa-cart" onclick="checkoutWhatsApp()">
-      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.875L0 24l6.29-1.512A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.497-5.202-1.366l-.374-.213-3.734.897.935-3.627-.234-.382A9.978 9.978 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      Order via WhatsApp
-    </button>
-  </div>
-</div>
-
-<!-- ── CHECKOUT MODAL ── -->
-<div class="modal" id="checkoutModal">
-  <div class="modal-bg" onclick="closeCheckout()"></div>
-  <div class="modal-box">
-    <div class="modal-header">
-      <div class="modal-title" id="modalTitle">Checkout</div>
-      <button class="cart-close" onclick="closeCheckout()">✕</button>
-    </div>
-    <div class="modal-steps" id="modalSteps">
-      <div class="modal-step active" id="step1-tab"><div class="modal-step-num">1</div>Cart<div class="modal-step-line"></div></div>
-      <div class="modal-step" id="step2-tab"><div class="modal-step-num">2</div>Shipping<div class="modal-step-line"></div></div>
-      <div class="modal-step" id="step3-tab"><div class="modal-step-num">3</div>Payment<div class="modal-step-line"></div></div>
-      <div class="modal-step" id="step4-tab"><div class="modal-step-num">4</div>Confirm</div>
-    </div>
-    <div class="modal-body" id="modalBody"></div>
-    <div class="modal-footer" id="modalFooter"></div>
-  </div>
-</div>
-
 <script>
-// ── PRODUCTS DATA ──
-const products = [
-  {id:1,cat:'laptops',badge:'hot',name:'ASUS ROG Strix G16',spec:'i9-13980HX · RTX 4070 · 16GB · 1TB · 240Hz',price:34999,oldPrice:42999,emoji:'💻'},
-  {id:2,cat:'laptops',badge:'new',name:'Dell Inspiron 15 3530',spec:'Intel Core i5 · 8GB RAM · 512GB SSD · 15.6" FHD',price:12999,emoji:'💻'},
-  {id:3,cat:'laptops',badge:'sale',name:'Lenovo IdeaPad 3',spec:'Intel Core i3 · 8GB RAM · 256GB SSD · 15.6" FHD',price:7999,oldPrice:8999,emoji:'💻'},
-  {id:4,cat:'laptops',badge:'',name:'HP 255 G10',spec:'AMD Ryzen 5 · 8GB RAM · 512GB SSD · 15.6" FHD',price:9999,emoji:'💻'},
-  {id:5,cat:'laptops',badge:'',name:'ASUS Vivobook 15',spec:'Intel Core i5 · 16GB RAM · 512GB SSD · 15.6" FHD',price:13999,emoji:'💻'},
-  {id:6,cat:'laptops',badge:'sale',name:'Acer Aspire 5',spec:'Intel Core i5 · 16GB RAM · 512GB SSD · 15.6" FHD',price:11999,oldPrice:14499,emoji:'💻'},
-  {id:7,cat:'desktops',badge:'new',name:'Custom Gaming PC',spec:'Ryzen 7 5800X · RTX 3060 · 16GB · 1TB NVMe',price:18500,emoji:'🖥️'},
-  {id:8,cat:'desktops',badge:'hot',name:'Intel i5 Office Desktop',spec:'Intel i5-12400 · 16GB · 500GB SSD · Win 11',price:8999,emoji:'🖥️'},
-  {id:9,cat:'accessories',badge:'hot',name:'Logitech G502 HERO',spec:'Gaming Mouse · 25,600 DPI · Programmable',price:1299,emoji:'🖱️'},
-  {id:10,cat:'accessories',badge:'',name:'HP HyperX Cloud III',spec:'Gaming Headset · 7.1 Surround Sound',price:2199,emoji:'🎧'},
-  {id:11,cat:'accessories',badge:'new',name:'Samsung 27" Curved',spec:'144Hz · FHD · FreeSync · VA Panel',price:5499,oldPrice:6999,emoji:'🖥️'},
-  {id:12,cat:'accessories',badge:'',name:'Logitech MX Keys S',spec:'Wireless Keyboard · Multi-device · Backlit',price:1799,emoji:'⌨️'},
-  {id:13,cat:'printers',badge:'',name:'Epson EcoTank L3250',spec:'WiFi · Print/Scan/Copy · Ink Tank',price:3799,emoji:'🖨️'},
-  {id:14,cat:'printers',badge:'',name:'HP LaserJet Pro M404n',spec:'Mono Laser · 38ppm · Network Ready',price:4299,emoji:'🖨️'},
-  {id:15,cat:'networking',badge:'new',name:'TP-Link Deco AX3000',spec:'WiFi 6 Mesh · 3-Pack · Whole Home Coverage',price:2899,emoji:'📡'},
-  {id:16,cat:'networking',badge:'',name:'Ubiquiti UniFi AP',spec:'AC Lite · Enterprise WiFi · PoE',price:1899,emoji:'📡'},
-];
+// Mobile menu toggle
+function toggleMobile(){const m=document.getElementById('mobileMenu');m.style.display=m.style.display==='none'?'flex':'none'}
+function closeMobile(){document.getElementById('mobileMenu').style.display='none'}
 
-let cart = [];
+// Nav scroll effect
+window.addEventListener('scroll',()=>{const nav=document.getElementById('mainNav');if(window.scrollY>50){nav.classList.add('scrolled')}else{nav.classList.remove('scrolled')}})
 
-function renderProducts(filter='all'){
-  const grid = document.getElementById('productsGrid');
-  const filtered = filter==='all' ? products : products.filter(p=>p.cat===filter);
-  grid.innerHTML = filtered.map(p=>`
-    <div class="product-card reveal visible">
-      ${p.badge ? `<span class="product-badge badge-${p.badge}">${p.badge.toUpperCase()}</span>` : ''}
-      <div class="product-img-wrap">${p.emoji}</div>
-      <div class="product-body">
-        <div class="product-name">${p.name}</div>
-        <div class="product-spec">${p.spec}</div>
-        <div class="product-price-row">
-          <span class="product-price">R ${p.price.toLocaleString()}</span>
-          ${p.oldPrice ? `<span class="product-old">R ${p.oldPrice.toLocaleString()}</span>` : ''}
-        </div>
-        <div class="product-actions">
-          <button class="btn-cart" onclick="addToCart('${p.name}','${p.emoji}',${p.price})">Add to Cart</button>
-          <button class="btn-wa-sm" onclick="waProduct('${p.name}',${p.price})" title="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.875L0 24l6.29-1.512A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.497-5.202-1.366l-.374-.213-3.734.897.935-3.627-.234-.382A9.978 9.978 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-renderProducts();
-
-function filterProducts(cat, btn){
-  document.querySelectorAll('.shop-tab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
-  renderProducts(cat);
-}
-
-function waProduct(name,price){
-  const msg = `Hi CrossTech! I'm interested in the ${name} (R ${price.toLocaleString()}). Is it available?`;
-  window.open(`https://wa.me/27836832745?text=${encodeURIComponent(msg)}`, '_blank');
-}
-
-// ── CART ──
-function addToCart(name,emoji,price){
-  const existing = cart.find(i=>i.name===name);
-  if(existing){ existing.qty++; }
-  else{ cart.push({name,emoji,price,qty:1}); }
-  updateCartUI();
-  openCart();
-}
-
-function removeFromCart(name){
-  cart = cart.filter(i=>i.name!==name);
-  updateCartUI();
-}
-
-function updateCartUI(){
-  const count = cart.reduce((s,i)=>s+i.qty,0);
-  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
-  document.getElementById('cartCount').textContent = count;
-  document.getElementById('cartCountMob').textContent = count;
-  document.getElementById('cartTotal').textContent = `R ${total.toLocaleString()}`;
-  const itemsEl = document.getElementById('cartItems');
-  const emptyEl = document.getElementById('cartEmpty');
-  if(cart.length===0){
-    emptyEl.style.display='block';
-    itemsEl.innerHTML = '';
-    itemsEl.appendChild(emptyEl);
-  } else {
-    emptyEl.style.display='none';
-    itemsEl.innerHTML = cart.map(i=>`
-      <div class="cart-item">
-        <div class="cart-item-emoji">${i.emoji}</div>
-        <div class="cart-item-details">
-          <div class="cart-item-name">${i.name}</div>
-          <div class="cart-item-price">R ${(i.price*i.qty).toLocaleString()} ${i.qty>1?`(×${i.qty})`:''}
-          </div>
-        </div>
-        <button class="cart-item-remove" onclick="removeFromCart('${i.name}')">✕</button>
-      </div>
-    `).join('');
-  }
-}
-
-function openCart(){ document.getElementById('cartPanel').classList.add('open'); document.getElementById('overlay').classList.add('visible'); }
-function closeCart(){ document.getElementById('cartPanel').classList.remove('open'); document.getElementById('overlay').classList.remove('visible'); }
-function toggleCart(){ document.getElementById('cartPanel').classList.contains('open') ? closeCart() : openCart(); }
-
-function checkoutWhatsApp(){
-  const items = cart.map(i=>`• ${i.emoji} ${i.name} ×${i.qty} = R ${(i.price*i.qty).toLocaleString()}`).join('\n');
-  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
-  const msg = `Hi CrossTech! I'd like to order:\n\n${items}\n\nTOTAL: R ${total.toLocaleString()}\n\nPlease confirm availability and delivery options.`;
-  window.open(`https://wa.me/27836832745?text=${encodeURIComponent(msg)}`,'_blank');
-}
-
-// ── CHECKOUT MODAL ──
-let checkoutStep = 1;
-let selectedDelivery = 'standard';
-let selectedPayment = 'card';
-let orderNum = '';
-
-function openCheckout(){
-  if(cart.length===0){ alert('Your cart is empty!'); return; }
-  checkoutStep=1;
-  orderNum = 'CTS-' + Math.floor(Math.random()*9000+1000);
-  document.getElementById('checkoutModal').classList.add('open');
-  renderCheckoutStep();
-}
-function closeCheckout(){ document.getElementById('checkoutModal').classList.remove('open'); }
-
-function renderCheckoutStep(){
-  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
-  const deliveryFee = selectedDelivery==='express'?199:selectedDelivery==='collection'?0:99;
-  const grandTotal = total + deliveryFee;
-  [1,2,3,4].forEach(n=>{
-    const t = document.getElementById(`step${n}-tab`);
-    t.className = 'modal-step' + (n<checkoutStep?' done':n===checkoutStep?' active':'');
-  });
-  const body = document.getElementById('modalBody');
-  const footer = document.getElementById('modalFooter');
-  document.getElementById('modalTitle').textContent = ['','Your Cart','Shipping Details','Payment Method','Order Confirmed'][checkoutStep];
-  if(checkoutStep===1){
-    body.innerHTML = `
-      <div class="checkout-section-title">Order Summary</div>
-      <div class="order-summary">
-        ${cart.map(i=>`<div class="order-summary-row"><span>${i.emoji} ${i.name} ×${i.qty}</span><span>R ${(i.price*i.qty).toLocaleString()}</span></div>`).join('')}
-        <div class="order-summary-row total"><span>SUBTOTAL</span><span>R ${total.toLocaleString()}</span></div>
-      </div>
-    `;
-    footer.innerHTML = `<button class="btn-next" onclick="checkoutStep=2;renderCheckoutStep()">Continue to Shipping →</button>`;
-  } else if(checkoutStep===2){
-    body.innerHTML = `
-      <div class="checkout-section-title">Shipping Details</div>
-      <div class="form-row"><div class="form-group"><label class="form-label">Full Name</label><input class="form-input" id="co-name" placeholder="Your full name"></div><div class="form-group"><label class="form-label">Phone</label><input class="form-input" id="co-phone" placeholder="+27 XX XXX XXXX"></div></div>
-      <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" id="co-email" placeholder="you@email.com" type="email"></div>
-      <div class="form-group"><label class="form-label">Delivery Address</label><input class="form-input" id="co-address" placeholder="Street address"></div>
-      <div class="form-row"><div class="form-group"><label class="form-label">City / Suburb</label><input class="form-input" id="co-city" placeholder="Randburg"></div><div class="form-group"><label class="form-label">Province</label><input class="form-input" id="co-province" placeholder="Gauteng"></div></div>
-      <div class="checkout-section-title" style="margin-top:16px">Delivery Options</div>
-      <div class="delivery-options">
-        <label class="delivery-opt ${selectedDelivery==='standard'?'selected':''}"><input type="radio" name="delivery" value="standard" ${selectedDelivery==='standard'?'checked':''} onchange="selectedDelivery='standard';renderCheckoutStep()"><div><div class="delivery-opt-label">Standard Delivery (2–3 Business Days)</div><div class="delivery-opt-sub">Nationwide via courier</div></div><span class="delivery-opt-price">R 99</span></label>
-        <label class="delivery-opt ${selectedDelivery==='express'?'selected':''}"><input type="radio" name="delivery" value="express" ${selectedDelivery==='express'?'checked':''} onchange="selectedDelivery='express';renderCheckoutStep()"><div><div class="delivery-opt-label">Express Delivery (Next Business Day)</div><div class="delivery-opt-sub">Nationwide — order before 12pm</div></div><span class="delivery-opt-price">R 199</span></label>
-        <label class="delivery-opt ${selectedDelivery==='collection'?'selected':''}"><input type="radio" name="delivery" value="collection" ${selectedDelivery==='collection'?'checked':''} onchange="selectedDelivery='collection';renderCheckoutStep()"><div><div class="delivery-opt-label">Free Collection (Randburg / Ferndale)</div><div class="delivery-opt-sub">Pick up in-store — same day available</div></div><span class="delivery-opt-price">FREE</span></label>
-      </div>
-    `;
-    footer.innerHTML = `<button class="btn-back" onclick="checkoutStep=1;renderCheckoutStep()">← Back</button><button class="btn-next" onclick="checkoutStep=3;renderCheckoutStep()">Continue to Payment →</button>`;
-  } else if(checkoutStep===3){
-    body.innerHTML = `
-      <div class="checkout-section-title">Payment Method</div>
-      <div class="payment-methods">
-        <label class="payment-method ${selectedPayment==='card'?'selected':''}"><input type="radio" name="pay" value="card" ${selectedPayment==='card'?'checked':''} onchange="selectedPayment='card';renderCheckoutStep()"><div><div class="payment-method-label">💳 Credit / Debit Card</div><div class="payment-method-sub">Visa, Mastercard, Amex</div></div><span class="payment-method-badge">SECURE</span></label>
-        <label class="payment-method ${selectedPayment==='eft'?'selected':''}"><input type="radio" name="pay" value="eft" ${selectedPayment==='eft'?'checked':''} onchange="selectedPayment='eft';renderCheckoutStep()"><div><div class="payment-method-label">🏦 Instant EFT</div><div class="payment-method-sub">FNB, ABSA, Standard Bank, Nedbank</div></div><span class="payment-method-badge">INSTANT</span></label>
-        <label class="payment-method ${selectedPayment==='payflex'?'selected':''}"><input type="radio" name="pay" value="payflex" ${selectedPayment==='payflex'?'checked':''} onchange="selectedPayment='payflex';renderCheckoutStep()"><div><div class="payment-method-label">✨ Payflex — Buy Now, Pay Later</div><div class="payment-method-sub">4 × interest-free payments</div></div><span class="payment-method-badge">0% INT</span></label>
-        <label class="payment-method ${selectedPayment==='snapscan'?'selected':''}"><input type="radio" name="pay" value="snapscan" ${selectedPayment==='snapscan'?'checked':''} onchange="selectedPayment='snapscan';renderCheckoutStep()"><div><div class="payment-method-label">📲 SnapScan</div><div class="payment-method-sub">Pay with your SnapScan app</div></div><span class="payment-method-badge">FAST</span></label>
-      </div>
-      <div class="checkout-section-title">Order Total</div>
-      <div class="order-summary">
-        <div class="order-summary-row"><span>Subtotal</span><span>R ${total.toLocaleString()}</span></div>
-        <div class="order-summary-row"><span>Delivery (${selectedDelivery})</span><span>${deliveryFee===0?'FREE':'R '+deliveryFee}</span></div>
-        <div class="order-summary-row total"><span>TOTAL (incl. VAT)</span><span>R ${grandTotal.toLocaleString()}</span></div>
-      </div>
-    `;
-    footer.innerHTML = `<button class="btn-back" onclick="checkoutStep=2;renderCheckoutStep()">← Back</button><button class="btn-next" onclick="checkoutStep=4;renderCheckoutStep()">Place Order →</button>`;
-  } else if(checkoutStep===4){
-    body.innerHTML = `
-      <div style="padding:20px 0;text-align:center">
-        <div class="confirm-check">✓</div>
-        <div class="confirm-title">Thank You!</div>
-        <p class="confirm-sub">Your order has been placed successfully. We'll contact you shortly on WhatsApp to confirm.</p>
-        <div class="confirm-details">
-          <div class="confirm-row"><span>Order Number</span><span>${orderNum}</span></div>
-          <div class="confirm-row"><span>Payment Method</span><span>${{card:'Credit Card',eft:'Instant EFT',payflex:'Payflex',snapscan:'SnapScan'}[selectedPayment]}</span></div>
-          <div class="confirm-row"><span>Delivery</span><span>${{standard:'Standard (2-3 days)',express:'Express (Next Day)',collection:'In-Store Collection'}[selectedDelivery]}</span></div>
-          <div class="confirm-row"><span>Total Paid</span><span style="color:var(--cyan)">R ${grandTotal.toLocaleString()}</span></div>
-        </div>
-        <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
-          <p style="color:var(--gray);font-size:.85rem">What happens next? We'll send an order confirmation on WhatsApp and notify you when your order ships.</p>
-          <a href="https://wa.me/27836832745" target="_blank" class="btn-primary" style="justify-content:center">Track on WhatsApp →</a>
-          <button class="btn-outline" onclick="cart=[];updateCartUI();closeCheckout();closeCart()">Continue Shopping</button>
-        </div>
-      </div>
-    `;
-    footer.innerHTML = '';
-  }
-}
-
-// ── NAV ──
-window.addEventListener('scroll', ()=>{
-  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY>10);
-});
-function toggleMobile(){ document.getElementById('mobileMenu').style.display = document.getElementById('mobileMenu').style.display==='block' ? 'none' : 'block'; }
-function closeMobile(){ document.getElementById('mobileMenu').style.display='none'; }
-
-// ── CONTACT FORM ──
-function handleSubmit(e){
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const service = document.getElementById('service').value;
-  const message = document.getElementById('message').value.trim();
-  if(!name||!phone||!service||!message){ alert('Please fill in all required fields.'); return; }
-  const msg = `Hi CrossTech! I'm ${name}.\n\nService: ${service}\n\nMessage: ${message}\n\nContact: ${phone}`;
-  window.open(`https://wa.me/27836832745?text=${encodeURIComponent(msg)}`,'_blank');
-  document.getElementById('formSuccess').style.display='block';
-  e.target.reset();
-  setTimeout(()=>{ document.getElementById('formSuccess').style.display='none'; }, 8000);
-}
-
-// ── REVEAL ANIMATION ──
-const revealObserver = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
-
-// ── NAV ACTIVE ──
-const sections = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', ()=>{
-  let cur='';
-  sections.forEach(s=>{ if(window.scrollY>=s.offsetTop-120) cur=s.id; });
-  document.querySelectorAll('.nav-links a').forEach(a=>{
-    a.classList.toggle('active', a.getAttribute('href')==='#'+cur);
-  });
-});
+// Smooth anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const href=a.getAttribute('href');if(href!=="#"){e.preventDefault();const target=document.querySelector(href);if(target){target.scrollIntoView({behavior:'smooth'})}}})})
 </script>
+
 </body>
 </html>
